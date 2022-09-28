@@ -21,13 +21,18 @@ public class PlayerAbility_Satellite : MonoBehaviour
     {
         if (satelliteCounter == 0)
         {
-           satelliteCenter = Instantiate(satelliteCenterPrefab, transform.position, Quaternion.identity);                       
-           satelliteCenter.player = transform;           
+            satelliteCenter = Instantiate(satelliteCenterPrefab, transform.position, Quaternion.identity);
+            satelliteCenter.player = transform;
         }
         else if (satelliteCounter == 1)
         {
             satelliteCenter.ActiveLevel2();
         }
+        else if (satelliteCounter == 2)
+        {
+            satelliteCenter.ActiveLevel3();
+        }
+
         satelliteCounter++;
     }
 
