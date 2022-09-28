@@ -47,4 +47,12 @@ public class SatelliteCenter : MonoBehaviour
         }
     }
 
+    public void UpgradeSpeed(float speed)
+    {
+        for (int i = 0; i < level3Satellites.Length; i++)
+        {
+            level3Satellites[i].GetComponent<Satellite>().rotSpeed = speed;
+        }
+    }
+
 }

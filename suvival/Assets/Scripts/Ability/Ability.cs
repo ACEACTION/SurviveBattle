@@ -6,6 +6,7 @@ using UnityEngine;
 public class Ability : ScriptableObject
 {
     public string abilityName;
+    public int maxAbilityLevel;
     public int abilityLevel;
     public Sprite abilityIcon;
     [TextArea] public string abilityDesc;
@@ -14,7 +15,7 @@ public class Ability : ScriptableObject
 
     public void Reset()
     {
-        abilityLevel = 1;
+        abilityLevel = 0;
     }
 
 

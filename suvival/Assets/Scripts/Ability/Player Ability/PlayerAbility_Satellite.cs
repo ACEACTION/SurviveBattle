@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerAbility_Satellite : MonoBehaviour
 {
@@ -12,9 +13,12 @@ public class PlayerAbility_Satellite : MonoBehaviour
     public delegate void PlayerSatelliteAbilityDel();
     public static PlayerSatelliteAbilityDel PlayerAbilitySatellite;
 
+    public static Action<float> UpgradeSatelliteSpeed;
+
     private void Start()
     {
         PlayerAbilitySatellite = SatelliteProcess;
+        UpgradeSatelliteSpeed = UpgradeSpeed;
     }
 
     void SatelliteProcess()
@@ -34,6 +38,11 @@ public class PlayerAbility_Satellite : MonoBehaviour
         }
 
         satelliteCounter++;
+    }
+
+    void UpgradeSpeed(float speed)
+    {
+        satelliteCenter.UpgradeSpeed(speed);
     }
 
 }

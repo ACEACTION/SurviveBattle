@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Satellite : MonoBehaviour
 {
-    [SerializeField] float rotSpeed;
+    public float rotSpeed;
 
     void Start()
     {
