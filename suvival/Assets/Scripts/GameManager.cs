@@ -8,13 +8,13 @@ public class GameManager : MonoBehaviour
 
 
     //methods
-    public void AddToList(GameObject gameobject)
+    public void AddToList(GameObject obj)
     {
-        enemiesList.Add(gameObject);
+        enemiesList.Add(obj);
     }
 
-    public void RemoveFromList(GameObject gameobject)
+    public void RemoveFromList(GameObject obj)
     {
-        enemiesList.Remove(gameObject);
+        enemiesList.Remove(obj);
     }
 }

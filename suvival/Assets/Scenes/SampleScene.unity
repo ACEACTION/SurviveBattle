@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.16474114, g: 0.19313255, b: 0.21944338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,14 +345,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: -0.059270527, y: 0.63666964, z: -0.16550325, w: 0.7508312}
+  m_LocalPosition: {x: 3.64, y: 11.68, z: -6.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.992, y: 79.418, z: -19.052}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,9 +721,9 @@ MonoBehaviour:
   - {fileID: 299439526981709562}
   - {fileID: 424547498858115414}
   radius: 41.68
-  enemiesAmount: 20
+  enemiesAmount: 1
   spawnPoint: {fileID: 412488616}
-  cdBetweenSpawns: 4
+  cdBetweenSpawns: 0.2
   gameManager: {fileID: 911384911}
 --- !u!1 &1566686008
 GameObject:
@@ -1420,6 +1420,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3261074856499420540, guid: 4a664ace8475a3f44a66579b08b81ee2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a3e78b8283d48444b6c4efd00f0e087, type: 2}
     - target: {fileID: 8438654253307581819, guid: 4a664ace8475a3f44a66579b08b81ee2,
         type: 3}
       propertyPath: m_Layer
@@ -1428,6 +1433,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 515430843824855580, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
     - {fileID: 2974850176727183275, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
+    - {fileID: 2490672509100179586, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
 --- !u!1001 &4979865429531314981
 PrefabInstance:
@@ -1515,6 +1521,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700592049911686623, guid: 20be8438987beb246a084356542b96b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4979865428565064758, guid: 20be8438987beb246a084356542b96b2,
         type: 3}
@@ -1819,6 +1830,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1417660386412703986, guid: d59f1058b7ce8574c800eee7f4d45373,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2cbe2ec5a07bf424f93e2c04e1a30d0b, type: 2}
     - target: {fileID: 7724569978140777000, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
       propertyPath: m_RootOrder
@@ -1837,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 7724569978140777000, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.891542
+      value: 31.7
       objectReference: {fileID: 0}
     - target: {fileID: 7724569978140777000, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
@@ -1877,7 +1893,12 @@ PrefabInstance:
     - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
       propertyPath: attackCdAmount
-      value: 10000
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373,
+        type: 3}
+      propertyPath: diagonalArrows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7724569978140777006, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
