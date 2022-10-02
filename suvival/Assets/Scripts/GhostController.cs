@@ -15,13 +15,11 @@ public class GhostController : MonoBehaviour
     private Action<GameObject> _killAction;
 
     NavMeshAgent agent;
-    private void OnEnable()
+
+    private void Start()
     {
         gameManager.AddToList(this.gameObject);
 
-    }
-    private void Start()
-    {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = enemyStats.movespeed;
         

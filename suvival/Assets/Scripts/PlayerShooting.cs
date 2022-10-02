@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
     private ObjectPool<Projectile> pool;
     public float attackSpeed;
     public float attackCd;
-    [SerializeField] bool DiagonalArrows;
+    [SerializeField] bool diagonalArrows;
 
     Animator anim;
     [SerializeField] float radius;
@@ -71,15 +71,40 @@ public class PlayerShooting : MonoBehaviour
                 closestEnemy = enemy.gameObject;
             }
         }
+        if (closestEnemy == null) return;
         var projectile = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
-        if(projectile)
+        
         projectile.transform.position = bulletSpawnPoint.position;
         projectile.direction = closestEnemy.transform.position - transform.position;
         projectile.direction.y = 0;
         projectile.Init(KillProjectile);
-        
+        if (diagonalArrows)
+        {
+            //diagonal arrows here
+            DiagonalArrows(projectile);
+        }
     }
 
+    public void DiagonalArrows(Projectile projectile)
+    {
+        //left projectile
+        var projLeft = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
+        projLeft.transform.position = bulletSpawnPoint.position;
+        
+        projLeft.direction = Quaternion.AngleAxis(-45, Vector3.up * 10) * projectile.direction;
+        projLeft.transform.Rotate(0, -25, 0);
+
+        projLeft.Init(KillProjectile);
+
+        //right projectile
+        var projRight = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
+        projRight.transform.position = bulletSpawnPoint.position;
+        projRight.direction = Quaternion.AngleAxis(25, Vector3.up * 10) * projectile.direction; ;
+        projRight.transform.Rotate(0,25,0);
+
+        projRight.Init(KillProjectile);
+
+    }
     private void KillProjectile(Projectile projectile)
     {
         if (_usedPool) pool.Release(projectile);
