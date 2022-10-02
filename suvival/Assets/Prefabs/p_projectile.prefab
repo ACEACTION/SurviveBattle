@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 65949703743157518}
   - component: {fileID: 54944604118038702}
   - component: {fileID: 2393848579444547367}
+  - component: {fileID: 8748577702222669339}
   m_Layer: 0
   m_Name: p_projectile
   m_TagString: Untagged
@@ -5037,6 +5038,26 @@ MonoBehaviour:
   _usedPool: 1
   hitEffect: {fileID: 1862546671279240, guid: b761cb055dbdf1947a68d6c857190837, type: 3}
   projectileSpeed: 3
+--- !u!114 &8748577702222669339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661707786246352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ba759cd568c0e47a7018ab70867a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  accuracy: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
+  shotSFX: {fileID: 0}
+  hitSFX: {fileID: 0}
+  trails: []
 --- !u!1 &1735373116630442
 GameObject:
   m_ObjectHideFlags: 0
