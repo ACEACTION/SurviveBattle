@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] DynamicJoystick joystick;
     [SerializeField] float rotateSpeed;
     public float moveSpeed;
+    [SerializeField] Animator anim;
 
     Vector3 movementDir;
     float xDir, zDir;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         RotatePlayerFace();
+        SetAnimationMove();
     }
 
     private void Move()
@@ -31,4 +33,13 @@ public class PlayerMovement : MonoBehaviour
         if (movementDir != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementDir), Time.deltaTime * rotateSpeed);
     }
+
+    void SetAnimationMove()
+    {
+        if (movementDir != Vector3.zero)
+            anim.SetBool("Running", true);
+        else
+            anim.SetBool("Running", false);
+    }
+
 }

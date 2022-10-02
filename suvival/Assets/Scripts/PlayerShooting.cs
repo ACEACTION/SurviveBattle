@@ -10,7 +10,7 @@ public class PlayerShooting : MonoBehaviour
     public float attackCd;
     [SerializeField] bool diagonalArrows;
 
-    Animator anim;
+    [SerializeField] Animator anim;
     [SerializeField] float radius;
     [SerializeField] float attackCdAmount;
 
@@ -60,7 +60,7 @@ public class PlayerShooting : MonoBehaviour
     {
         float distanceToClosestEnemy = 1000;
         GameObject closestEnemy = null; 
-            //finding the closest enemy
+        //finding the closest enemy
         var enemies = Physics.OverlapSphere(transform.position, radius, enemyLayerMask);
         foreach(var enemy in enemies)
         {
@@ -71,7 +71,15 @@ public class PlayerShooting : MonoBehaviour
                 closestEnemy = enemy.gameObject;
             }
         }
-        if (closestEnemy == null) return;
+        if (closestEnemy == null)
+        {
+            anim.SetBool("Attacking", false);
+            anim.SetLayerWeight(1, 0);
+            return;
+        }
+
+        anim.SetBool("Attacking", true);
+        anim.SetLayerWeight(1, .5f);
         var projectile = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         
         projectile.transform.position = bulletSpawnPoint.position;
@@ -91,8 +99,7 @@ public class PlayerShooting : MonoBehaviour
         var projLeft = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         projLeft.transform.position = bulletSpawnPoint.position;
         
-        projLeft.direction = Quaternion.AngleAxis(-45, Vector3.up * 10) * projectile.direction;
-        projLeft.transform.Rotate(0, -25, 0);
+        projLeft.direction = Quaternion.AngleAxis(-25, Vector3.up * 10) * projectile.direction;
 
         projLeft.Init(KillProjectile);
 
@@ -100,7 +107,6 @@ public class PlayerShooting : MonoBehaviour
         var projRight = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         projRight.transform.position = bulletSpawnPoint.position;
         projRight.direction = Quaternion.AngleAxis(25, Vector3.up * 10) * projectile.direction; ;
-        projRight.transform.Rotate(0,25,0);
 
         projRight.Init(KillProjectile);
 
