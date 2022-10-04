@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,16 @@ using UnityEngine.Pool;
 public class PlayerShooting : MonoBehaviour
 {
     //variables
+    public static PlayerShooting instance;
+    private void Awake()
+    {
+        if(instance == null)
+        instance = this;
+    }
+    public Collider[] enemies;
+    public GameObject closestEnemy;
+
+
     private ObjectPool<Projectile> pool;
     public float attackSpeed;
     public float attackCd;
@@ -55,22 +66,33 @@ public class PlayerShooting : MonoBehaviour
             attackCd -= Time.deltaTime;
         }
     }
+    public Collider[] EnemiesInRange(float range)
+    {
+        return enemies = Physics.OverlapSphere(transform.position, range, enemyLayerMask);
 
-    void Fire()
+    }
+
+    public GameObject FindingClosestEnemy()
     {
         float distanceToClosestEnemy = 1000;
-        GameObject closestEnemy = null; 
-        //finding the closest enemy
-        var enemies = Physics.OverlapSphere(transform.position, radius, enemyLayerMask);
-        foreach(var enemy in enemies)
+        closestEnemy = null;
+        EnemiesInRange(radius);
+        foreach (var enemy in enemies)
         {
             float distanceToEnemy = (enemy.transform.position - this.transform.position).sqrMagnitude;
-            if(distanceToEnemy < distanceToClosestEnemy)
+            if (distanceToEnemy < distanceToClosestEnemy)
             {
                 distanceToClosestEnemy = distanceToEnemy;
                 closestEnemy = enemy.gameObject;
             }
         }
+        return closestEnemy;
+    }
+    void Fire()
+    {
+        //finding closest enemy here
+        FindingClosestEnemy();
+
         if (closestEnemy == null)
         {
             anim.SetBool("Attacking", false);

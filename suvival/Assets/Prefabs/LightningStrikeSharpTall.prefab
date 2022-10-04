@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 410324}
   - component: {fileID: 19877778}
   - component: {fileID: 19957158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4875,7 +4875,9 @@ GameObject:
   - component: {fileID: 416978}
   - component: {fileID: 19828376}
   - component: {fileID: 19962870}
-  m_Layer: 0
+  - component: {fileID: 662243923505130769}
+  - component: {fileID: 8386264585484011769}
+  m_Layer: 7
   m_Name: LightningStrikeSharpTall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4891,7 +4893,7 @@ Transform:
   m_GameObject: {fileID: 124998}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 438514}
@@ -9713,6 +9715,35 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &662243923505130769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9496ba9bc33af447ac4eadbbc72f2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 30
+  destroyCd: 1
+  _destroyActivator: 0
+  plShooting: {fileID: 0}
+--- !u!65 &8386264585484011769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8500704, y: 1.7981142, z: 1.2293802}
+  m_Center: {x: -0.13368422, y: 0.05216497, z: -0.61468023}
 --- !u!1 &126486
 GameObject:
   m_ObjectHideFlags: 0
@@ -9724,7 +9755,7 @@ GameObject:
   - component: {fileID: 438514}
   - component: {fileID: 19874294}
   - component: {fileID: 19950264}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ImpactLightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9962,8 +9993,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.2
-      minScalar: 0.6
+      scalar: 2.5
+      minScalar: 2.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14552,7 +14583,7 @@ GameObject:
   - component: {fileID: 464878}
   - component: {fileID: 19896900}
   - component: {fileID: 19920086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VerticalStrike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
