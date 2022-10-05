@@ -36,13 +36,14 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
     private void Update()
     {
-        if (lightningCd < 0)
-        {
-            lightningCd = lightningCdAmount;
-            LightningSpawn();
-        }
-        else lightningCd -= Time.deltaTime;
-
+        /* if (lightningCd < 0)
+         {
+             lightningCd = lightningCdAmount;
+             LightningSpawn();
+         }
+         else lightningCd -= Time.deltaTime;
+ */
+        if (Input.GetKeyDown(KeyCode.V)) LightningSpawn();
     }
 
     public void LightningSpawn()
