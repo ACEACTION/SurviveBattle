@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:suvival/Assets/Settings/New Universal Render Pipeline Asset.asset.meta
+guid: 2ceebd0f001edb749b075166425c1111
+========
 guid: 2a3b617cbce77434cbeffedfe77d492a
+>>>>>>>> main:suvival/Assets/Art/Textures/circle_AB - Copy.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MeteorArea : MonoBehaviour
 {
-
-    void Start()
+    Action<GameObject> ReleaseMeteorArea;    
+    IEnumerator Start()
     {
-        
+        yield return new WaitForSeconds(2f);
+        ReleaseMeteorArea(gameObject);
     }
     
 
-    private void OnTriggerEnter(Collider other)
+    public void InitAction(Action<GameObject> action)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            // dmg to enemy
-        }
+        ReleaseMeteorArea = action;
     }
 
 }
