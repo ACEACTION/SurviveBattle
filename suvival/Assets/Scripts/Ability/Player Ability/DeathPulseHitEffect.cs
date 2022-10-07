@@ -3,19 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningController : MonoBehaviour
+public class DeathPulseHitEffect : MonoBehaviour
 {
-    private Action<GameObject> _killAction;
-    [SerializeField] float radius;
+    Action<GameObject> releaseDeathPulseHitEffect;
     [SerializeField] float destroyCd;
     [SerializeField] bool _destroyActivator;
 
-    public void Init(Action<GameObject> killAction)
-    {
-        _killAction = killAction;
-    }
-
-    void Update()
+    private void Update()
     {
         if (_destroyActivator)
         {
@@ -24,22 +18,22 @@ public class LightningController : MonoBehaviour
             {
                 _destroyActivator = false;
                 destroyCd = 1f;
-                _killAction(this.gameObject);
+                releaseDeathPulseHitEffect(this.gameObject);
 
             }
         }
     }
 
 
+    public void Init(Action<GameObject> action)
+    {
+        releaseDeathPulseHitEffect = action;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            foreach(var enemy in PlayerShooting.instance.EnemiesInRange(radius))
-            {
-                //dmg them
-                print(enemy.name);
-            }
             _destroyActivator = true;
         }
     }

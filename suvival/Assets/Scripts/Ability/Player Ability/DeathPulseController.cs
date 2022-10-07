@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class DeathPulseController : MonoBehaviour
 {
     private Action<GameObject> _killAction;
-    [SerializeField] PlayerShooting plShooting;
     [SerializeField] float destroyTimer;
+    [SerializeField] DeathPulseStats dpStats;
+    [SerializeField] Vector3 offset;
     NavMeshAgent agent;
     public Transform destination;
     public void Init(Action<GameObject> killAction)
@@ -30,8 +31,13 @@ public class DeathPulseController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
-        _killAction(this.gameObject);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            DeathPulseHitEffect dpEffect = dpStats.deathPulseHitEffectPool.Get().GetComponent<DeathPulseHitEffect>();
+            dpEffect.transform.position = transform.position + offset;
+            dpEffect.Init(dpStats.KillDeathPulseEffect);
+            _killAction(this.gameObject);
+        }
     }
 
 
