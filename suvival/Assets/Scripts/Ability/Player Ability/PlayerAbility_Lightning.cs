@@ -7,11 +7,9 @@ public class PlayerAbility_Lightning : MonoBehaviour
 {
     private ObjectPool<GameObject> pool;
     [SerializeField] GameObject lightningPrefab;
-    [SerializeField] float radius;
+    [SerializeField] LightninStats stats;
     [SerializeField] Vector3 offset;
     [SerializeField] bool _usedPool;
-    [SerializeField] float lightningCd;
-    [SerializeField] float lightningCdAmount;
 
 
 
@@ -35,23 +33,22 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
     private void Update()
     {
-        /* if (lightningCd < 0)
+         if (stats.cd < 0)
          {
-             lightningCd = lightningCdAmount;
+             stats.cd = stats.cdDefault;
              LightningSpawn();
          }
-         else lightningCd -= Time.deltaTime;
- */
-        if (Input.GetKeyDown(KeyCode.V)) LightningSpawn();
+         else stats.cd -= Time.deltaTime;
+ 
     }
 
     public void LightningSpawn()
     {
         var lightning = _usedPool ? pool.Get() : Instantiate(lightningPrefab);
-        var enemies = PlayerShooting.instance.EnemiesInRange(radius);
+        var enemies = PlayerShooting.instance.EnemiesInRange(stats.radius);
         var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
         lightning.transform.position = chosenEnemy.transform.position + offset;
-        lightning.GetComponent<LightningController>().Init(KillProjectile);
+        lightning.GetComponent<LightningController>().Init(KillProjectile, stats.radius);
     }
 
     private void KillProjectile(GameObject obj)

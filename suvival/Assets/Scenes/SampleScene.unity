@@ -1103,11 +1103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningPrefab: {fileID: 213755693}
-  radius: 100
+  stats: {fileID: 11400000, guid: 2e08a3a3bb405d44cbc941f6823d14ba, type: 2}
   offset: {x: 0, y: 0, z: 0}
   _usedPool: 1
-  lightningCd: 1
-  lightningCdAmount: 1
 --- !u!4 &1923259794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7724569978140777000, guid: d59f1058b7ce8574c800eee7f4d45373,
@@ -1127,12 +1125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPulsePrefab: {fileID: 781038646}
-  enemyCount: 10
+  stats: {fileID: 11400000, guid: b620df962c06e1548a1d73dbf2312c16, type: 2}
+  radius: 0
   spawnPoint: {fileID: 1923259794}
-  radius: 50
   _usedPool: 1
-  deathPulseCd: 0
-  deathPulseCdAmount: 1
 --- !u!1 &299439526981709562 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4700592049911686623, guid: 20be8438987beb246a084356542b96b2,
