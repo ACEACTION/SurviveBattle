@@ -498,6 +498,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satelliteCenterPrefab: {fileID: 6610105730616755898, guid: dc5eb0c3ce564f04baba5d066eac1d75, type: 3}
+--- !u!114 &1923259804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923259786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98715d21899d2194c8a73b7fcdefc009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightningPrefab: {fileID: 124998, guid: 31e252ed33e57b345b679eed24787c22, type: 3}
+  radius: 0
+  offset: {x: 0, y: 0, z: 0}
+  _usedPool: 0
+  lightningCd: 0
+  lightningCdAmount: 0
 --- !u!1001 &429728378603971710
 PrefabInstance:
   m_ObjectHideFlags: 0

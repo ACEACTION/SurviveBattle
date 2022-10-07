@@ -25,8 +25,25 @@ public class AbilityUIManager : MonoBehaviour
     {
         DynamicJoystick.Instance.gameObject.SetActive(false);
         abilitySelection.gameObject.SetActive(true);
-        abilitySelection.SetAbilitySlotss(abilities);     
+        abilitySelection.SetAbilitySlotss(FindAbility());
         Time.timeScale = 0;
+    }
+
+    Ability[] FindAbility()
+    {
+        int index = 0;
+        Ability[] findedAbilities = new Ability[3];
+
+        while (index < 3)
+        {
+            Ability ability = abilities[Random.Range(0, abilities.Length)];
+            if (!ability.abilityIsDeactive)
+            {
+                findedAbilities[index] = ability;
+                index++;
+            }
+        }
+        return findedAbilities;
     }
 
     private void OnDisable()
