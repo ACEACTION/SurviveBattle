@@ -5,23 +5,32 @@ using UnityEngine;
 
 public class Ability : ScriptableObject
 {
-    [HideInInspector] public bool abilityIsDeactive;
     public string abilityName;
-    public int maxAbilityLevel = 4;
-    public int abilityLevel = 1;
+    public int maxAbilityLevel;
+    public int abilityLevel;
     public Sprite abilityIcon;
+    public bool abilityIsDeactive;
     [HideInInspector] public string abilityDesc;
     [TextArea] public string[] abilityLevelsDesc;
 
-    public virtual void DoActive() { }
-
-    public void ResetUpgradeLevel()
+    public virtual void DoActive() 
     {
-        abilityLevel = 0;
+        if (abilityIsDeactive)
+            return;
+
+        abilityDesc = abilityLevelsDesc[abilityLevel];
+        abilityLevel++;
+
+        if (abilityLevel >= maxAbilityLevel)
+            abilityIsDeactive = true;
+
     }
 
-
-
+    public virtual void ResetAbility()
+    {
+        abilityLevel = 0;
+        abilityIsDeactive = false;
+    }
 
 }
 

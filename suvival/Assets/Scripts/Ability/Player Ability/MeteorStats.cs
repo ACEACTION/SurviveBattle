@@ -9,14 +9,20 @@ public class MeteorStats : ScriptableObject
     public float meteorMoveSpeed;
     public float meteorMoveDirOffsetScale;
     public GameObject meteorAreaPrefab;
-    public float meteorAreaScale;
     public ObjectPool<GameObject> meteorAreaPool;
+    [SerializeField] float defaultMeteorAreaScale;
+    public float meteorAreaScale;
+    [SerializeField] int defaultMeteorCounter;
+    public int meteorCounter;
+    [SerializeField] float defaultMaxMakeMeteorCd;
+    public float maxMakeMeteorCd;
 
-    void OnEnable()
+    private void OnEnable()
     {
-        meteorAreaPool = new ObjectPool<GameObject>(CreateMeteorArea, OnGet, OnRelease, OnDestoryMeteorArea, false, 100, 100000);
+        meteorAreaPool = new ObjectPool<GameObject>(CreateMeteorArea, OnGet, OnRelease, OnDestoryMeteorArea, false, 100, 100000);        
     }
 
+    #region object pool
     private void OnDestoryMeteorArea(GameObject obj)
     {
         Destroy(obj);
@@ -41,6 +47,30 @@ public class MeteorStats : ScriptableObject
     public void OnReleaseMeteorArea(GameObject meteor)
     {
         meteorAreaPool.Release(meteor);
+    }
+
+    #endregion
+
+    public void ResetMeteorAreaStats()
+    {
+        meteorAreaScale = defaultMeteorAreaScale;
+        meteorCounter = defaultMeteorCounter;
+        maxMakeMeteorCd = defaultMaxMakeMeteorCd;
+    }
+    
+    public void AddMeteorAreaScale(float amount)
+    {
+        meteorAreaScale += amount;
+    }
+
+    public void AddMeteorCounter(int amount)
+    {
+        meteorCounter = amount;
+    }
+
+    public void MinusMakeMeteorCd(float amount)
+    {
+        maxMakeMeteorCd -= amount;
     }
 
 }

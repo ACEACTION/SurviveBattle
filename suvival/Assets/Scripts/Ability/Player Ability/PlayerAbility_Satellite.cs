@@ -6,41 +6,41 @@ using System;
 public class PlayerAbility_Satellite : MonoBehaviour
 {
 
-    int satelliteCounter;
     [SerializeField] SatelliteCenter satelliteCenterPrefab;
     SatelliteCenter satelliteCenter;
 
-    public delegate void PlayerSatelliteAbilityDel();
-    public static PlayerSatelliteAbilityDel PlayerAbilitySatellite;
 
-    public static Action<float> UpgradeSatelliteSpeed;
+    
+    public delegate PlayerAbility_Satellite GetPlayerAbilitySatelliteDelegate();
+    public static GetPlayerAbilitySatelliteDelegate GetPlayerAbilitySatellite;
 
     private void Start()
     {
-        PlayerAbilitySatellite = SatelliteProcess;
-        UpgradeSatelliteSpeed = UpgradeSpeed;
+        GetPlayerAbilitySatellite = GetPlayerAbility;
     }
 
-    void SatelliteProcess()
+    PlayerAbility_Satellite GetPlayerAbility()
     {
-        if (satelliteCounter == 0)
-        {
-            satelliteCenter = Instantiate(satelliteCenterPrefab, transform.position, Quaternion.identity);
-            satelliteCenter.player = transform;
-        }
-        else if (satelliteCounter == 1)
-        {
-            satelliteCenter.ActiveLevel2();
-        }
-        else if (satelliteCounter == 2)
-        {
-            satelliteCenter.ActiveLevel3();
-        }
-
-        satelliteCounter++;
+        return this;
     }
 
-    void UpgradeSpeed(float speed)
+    public void ActiveLevel1()
+    {
+        satelliteCenter = Instantiate(satelliteCenterPrefab, transform.position, Quaternion.identity);
+        satelliteCenter.player = transform;
+    }
+
+    public void ActiveLevel2()
+    {
+        satelliteCenter.ActiveLevel2();
+    }
+
+    public void ActiveLevel3()
+    {
+        satelliteCenter.ActiveLevel3();
+    }  
+
+    public void UpgradeSpeed(float speed)
     {
         satelliteCenter.UpgradeSpeed(speed);
     }

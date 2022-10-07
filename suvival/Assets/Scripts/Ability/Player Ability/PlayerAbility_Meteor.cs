@@ -7,21 +7,25 @@ using Random = UnityEngine.Random;
 
 public class PlayerAbility_Meteor : MonoBehaviour
 {
-    [SerializeField] float randomOffsetScale;
-    [SerializeField] GameObject meteorPrefab;
-    public ObjectPool<GameObject> meteorPool;
-    public int meteorCounter;
+    // variables
+    [SerializeField] float randomOffsetScale;    
+    [SerializeField] float makeMeteorCd;
+    bool activeAbility;
 
-    public static Action<int> AddMeteorCounterAction;
+    // references
+    [SerializeField] GameObject meteorPrefab;
+    [SerializeField] MeteorStats meteorStats;
+    public ObjectPool<GameObject> meteorPool;
+    public static Action DoActiveAbilityAction;
 
     void Start()
     {
-        AddMeteorCounterAction = AddMeteorCounter;
+        makeMeteorCd = meteorStats.maxMakeMeteorCd;
         meteorPool = new ObjectPool<GameObject>(CreateMeteor, OnGet, OnRelease, OnDestoryMeteor, false, 100, 100000);
-
+        DoActiveAbilityAction = DoActiveAbility;
     }
 
-
+    #region pool object
     private void OnDestoryMeteor(GameObject obj)
     {
         Destroy(obj);
@@ -35,6 +39,7 @@ public class PlayerAbility_Meteor : MonoBehaviour
 
     private void OnGet(GameObject obj)
     {
+        obj.transform.position = GetRandomPos();
         obj.SetActive(true);
     }
 
@@ -48,10 +53,19 @@ public class PlayerAbility_Meteor : MonoBehaviour
     {
         meteorPool.Release(meteor);
     }
-
+    #endregion
 
     void Update()
     {
+        if (activeAbility)
+        {
+            makeMeteorCd -= Time.deltaTime;
+            if (makeMeteorCd <= 0)
+            {
+                MakeMeteor();
+                makeMeteorCd = meteorStats.maxMakeMeteorCd;
+            }
+        }
         if (Input.GetKeyUp(KeyCode.E))    
             MakeMeteor();
     }
@@ -59,9 +73,10 @@ public class PlayerAbility_Meteor : MonoBehaviour
 
     void MakeMeteor()
     {
-        for (int i = 0; i < meteorCounter; i++)
+        for (int i = 0; i < meteorStats.meteorCounter; i++)
         {
             Meteor meteor = meteorPool.Get().GetComponent<Meteor>();
+
             meteor.InitMeteor(OnReleaseMeteor);
         }
     }
@@ -73,11 +88,11 @@ public class PlayerAbility_Meteor : MonoBehaviour
                            transform.position.y + 30,
                            Random.Range(transform.position.z - randomOffsetScale, 
                             transform.position.z + randomOffsetScale));
-    }
-    
-    void AddMeteorCounter(int count)
+    }    
+
+    void DoActiveAbility()
     {
-        meteorCounter = count;
+        activeAbility = true;
     }
 
 
