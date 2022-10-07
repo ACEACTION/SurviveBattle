@@ -11,7 +11,6 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     [SerializeField] float radius;
     [SerializeField] bool _usedPool;
-    [SerializeField] PlayerShooting plShooting;
     [SerializeField] float deathPulseCd;
     [SerializeField] float deathPulseCdAmount;
 
@@ -22,16 +21,17 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
         pool = new ObjectPool<GameObject>(() =>
         {
             return Instantiate(deathPulsePrefab);
-        }, lightning =>
+        }, deathPulse =>
         {
-            lightning.gameObject.SetActive(true);
-        }, lightning =>
+            deathPulse.gameObject.SetActive(true);
+        }, deathPulse =>
         {
-            lightning.gameObject.SetActive(false);
-        }, lightning =>
+            deathPulse.gameObject.SetActive(false);
+        }, deathPulse =>
         {
-            Destroy(lightning.gameObject);
+            Destroy(deathPulse.gameObject);
         }, false, 10, 20);
+
         deathPulseCd = deathPulseCdAmount;
     }
 
@@ -51,9 +51,9 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            var enemies = plShooting.EnemiesInRange(radius);
+            var enemies = PlayerShooting.instance.EnemiesInRange(radius);
             var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
-            var deathpulse = _usedPool ? pool.Get() : Instantiate(deathPulsePrefab);
+            var deathpulse = pool.Get();
             deathpulse.transform.position = spawnPoint.transform.position;
             deathpulse.GetComponent<DeathPulseController>().destination = chosenEnemy.transform;
             deathpulse.GetComponent<DeathPulseController>().Init(KillDeathPulse);
