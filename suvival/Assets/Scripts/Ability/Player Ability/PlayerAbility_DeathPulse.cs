@@ -7,12 +7,11 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
     private ObjectPool<GameObject> pool;
 
     [SerializeField] GameObject deathPulsePrefab;
-    [SerializeField] int enemyCount;
-    [SerializeField] Transform spawnPoint;
+    [SerializeField] DpStats stats;
     [SerializeField] float radius;
+    [SerializeField] Transform spawnPoint;
     [SerializeField] bool _usedPool;
-    [SerializeField] float deathPulseCd;
-    [SerializeField] float deathPulseCdAmount;
+
 
 
 
@@ -32,24 +31,24 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
             Destroy(deathPulse.gameObject);
         }, false, 10, 20);
 
-        deathPulseCd = deathPulseCdAmount;
+        stats.deathPulseCd = stats.deathPulseCdAmount;
     }
 
     private void Update()
     {
-        if(deathPulseCd < 0)
+        if(stats.deathPulseCd < 0)
         {
-            deathPulseCd = deathPulseCdAmount;
+            stats.deathPulseCd = stats.deathPulseCdAmount;
             DeathPulseSpawning();
         }
         else
         {
-            deathPulseCd -= Time.deltaTime;
+            stats.deathPulseCd -= Time.deltaTime;
         }
     }
     public void DeathPulseSpawning()
     {
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < stats.count; i++)
         {
             var enemies = PlayerShooting.instance.EnemiesInRange(radius);
             var chosenEnemy = enemies[Random.Range(0, enemies.Length)];

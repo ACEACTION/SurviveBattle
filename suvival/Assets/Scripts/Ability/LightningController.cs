@@ -10,9 +10,10 @@ public class LightningController : MonoBehaviour
     [SerializeField] float destroyCd;
     [SerializeField] bool _destroyActivator;
 
-    public void Init(Action<GameObject> killAction)
+    public void Init(Action<GameObject> killAction, float radius)
     {
         _killAction = killAction;
+        this.radius = radius;
     }
 
     void Update()
