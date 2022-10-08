@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class LightninStats : ScriptableObject
 {
     public float radius;
-    public float radiusDefault;
+    public float radiusDefault = 50f;
 
     public int count;
     public int countDefault;

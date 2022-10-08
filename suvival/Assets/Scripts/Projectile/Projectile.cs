@@ -47,6 +47,7 @@ public class Projectile : MonoBehaviour
     {
         if (col.transform.CompareTag("Enemy"))
         {
+            print("colided");
             var hiteffect = _usedPool ? pool.Get() : Instantiate(hitEffect);
             hiteffect.transform.position = col.transform.position;
             hiteffect.GetComponent<ProjectileHitEffect>().Init(KillEffect);

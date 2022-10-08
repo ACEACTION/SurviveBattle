@@ -38902,8 +38902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTimer: 2
-  dpStats: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
+  dpStats: {fileID: 11400000, guid: 0dabf756f354863469e3a18071f0d929, type: 2}
+  offset: {x: 0, y: 1.74, z: 0}
   destination: {fileID: 0}
 --- !u!195 &781038647
 NavMeshAgent:

@@ -74,7 +74,7 @@ public class PlayerShooting : MonoBehaviour
 
     public GameObject FindingClosestEnemy()
     {
-        float distanceToClosestEnemy = 1000;
+        float distanceToClosestEnemy = Mathf.Infinity;
         closestEnemy = null;
         EnemiesInRange(radius);
         foreach (var enemy in enemies)
