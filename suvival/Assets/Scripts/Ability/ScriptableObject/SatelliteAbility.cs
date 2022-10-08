@@ -22,7 +22,6 @@ public class SatelliteAbility : Ability
     {
         base.DoActive();
 
-        
 
         switch (abilityLevel)
         {

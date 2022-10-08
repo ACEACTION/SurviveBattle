@@ -511,11 +511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningPrefab: {fileID: 124998, guid: 31e252ed33e57b345b679eed24787c22, type: 3}
-  radius: 0
+  stats: {fileID: 11400000, guid: 59a377776e2af1e42bad494b3e20d67a, type: 2}
   offset: {x: 0, y: 0, z: 0}
   _usedPool: 0
-  lightningCd: 0
-  lightningCdAmount: 0
 --- !u!1001 &429728378603971710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,6 +569,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1910988702571676683, guid: 16e1b32120e42024484664d25e2b58af, type: 3}
+      propertyPath: abilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 19e7edbb863a530499a7a5e1f3b428c6, type: 2}
+    - target: {fileID: 1910988702571676683, guid: 16e1b32120e42024484664d25e2b58af, type: 3}
+      propertyPath: abilitiesBackupList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910988702571676683, guid: 16e1b32120e42024484664d25e2b58af, type: 3}
+      propertyPath: abilitiesBackupList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 19e7edbb863a530499a7a5e1f3b428c6, type: 2}
+    - target: {fileID: 1910988702571676683, guid: 16e1b32120e42024484664d25e2b58af, type: 3}
+      propertyPath: abilitiesBackupList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 387c84d638c8dae498c4ac3bb397dc59, type: 2}
+    - target: {fileID: 1910988702571676683, guid: 16e1b32120e42024484664d25e2b58af, type: 3}
+      propertyPath: abilitiesBackupList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2201f9ec667a2534e89f9fddd2cd3738, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e1b32120e42024484664d25e2b58af, type: 3}
 --- !u!1001 &875166390022974021

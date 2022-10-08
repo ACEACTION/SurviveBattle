@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class AbilityUIManager : MonoBehaviour
 {
-    [SerializeField] Ability[] abilities;
+    [SerializeField] List<Ability> abilities;
+    [SerializeField] List<Ability> abilitiesList;
     [SerializeField] AbilitySelection abilitySelection;
+    [SerializeField] Ability[] findedAbilitiesList = new Ability[3];
+    int findedListIndex = 0;
     
 
     private void Start()
     {
-        
+
     }
 
 
@@ -31,25 +34,36 @@ public class AbilityUIManager : MonoBehaviour
 
     Ability[] FindAbility()
     {
-        int index = 0;
-        Ability[] findedAbilities = new Ability[3];
+        SetAbilitiesItemList();
 
-        while (index < 3)
+        while (findedListIndex < 3)
         {
-            Ability ability = abilities[Random.Range(0, abilities.Length)];
+            Ability ability = abilitiesList[Random.Range(0, abilitiesList.Count)];
             if (!ability.abilityIsDeactive)
             {
-                findedAbilities[index] = ability;
-                index++;
+                findedAbilitiesList[findedListIndex] = ability;
+                abilitiesList.Remove(ability);
+                findedListIndex++;
             }
         }
-        return findedAbilities;
+
+        return findedAbilitiesList;
+    }
+
+
+    void SetAbilitiesItemList()
+    {
+        abilitiesList.Clear();
+        for (int i = 0; i < abilities.Count; i++)
+        {
+            abilitiesList.Add(abilities[i]);
+        }
     }
 
     private void OnDisable()
     {
         // reset abilities
-        for (int i = 0; i < abilities.Length; i++)
+        for (int i = 0; i < abilities.Count; i++)
         {
             abilities[i].ResetAbility();
         }
