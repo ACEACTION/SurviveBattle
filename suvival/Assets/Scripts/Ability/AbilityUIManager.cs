@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AbilityUIManager : MonoBehaviour
 {
     [SerializeField] List<Ability> abilities;
-    [SerializeField] List<Ability> abilitiesList;
+    List<Ability> abilitiesList = new List<Ability>();
     [SerializeField] AbilitySelection abilitySelection;
-    [SerializeField] Ability[] findedAbilitiesList = new Ability[3];
+    Ability[] findedAbilitiesList = new Ability[3];
     int findedListIndex = 0;
     
 

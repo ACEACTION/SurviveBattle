@@ -514,6 +514,23 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 59a377776e2af1e42bad494b3e20d67a, type: 2}
   offset: {x: 0, y: 0, z: 0}
   _usedPool: 0
+--- !u!114 &1923259805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923259786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9227757c85749e4f8542d4b43f27f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPulsePrefab: {fileID: 0}
+  stats: {fileID: 11400000, guid: bba17738943885344906d57dd5b0b73d, type: 2}
+  radius: 0
+  spawnPoint: {fileID: 0}
+  _usedPool: 0
 --- !u!1001 &429728378603971710
 PrefabInstance:
   m_ObjectHideFlags: 0

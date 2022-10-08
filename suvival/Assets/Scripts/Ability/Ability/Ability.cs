@@ -21,7 +21,7 @@ public class Ability : ScriptableObject
         abilityDesc = abilityLevelsDesc[abilityLevel];
         abilityLevel++;
 
-        if (abilityLevel >= maxAbilityLevel)
+        if (abilityLevel > maxAbilityLevel)
             abilityIsDeactive = true;
 
     }
