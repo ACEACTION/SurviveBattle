@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using System;
+using Random = UnityEngine.Random;
+
 public class PlayerAbility_DeathPulse : MonoBehaviour
 {
+    float deathPulseCd;
     private ObjectPool<GameObject> pool;
 
     [SerializeField] GameObject deathPulsePrefab;
@@ -11,12 +15,16 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
     [SerializeField] float radius;
     [SerializeField] Transform spawnPoint;
     [SerializeField] bool _usedPool;
+    bool abilityIsActive;
 
-
+    public static Action DoActiveAbilityAction;
 
 
     private void Start()
     {
+        DoActiveAbilityAction = DoActiveAbility;
+        deathPulseCd = stats.maxDeathPulseCd;
+
         pool = new ObjectPool<GameObject>(() =>
         {
             return Instantiate(deathPulsePrefab);
@@ -31,19 +39,21 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
             Destroy(deathPulse.gameObject);
         }, false, 10, 20);
 
-        stats.deathPulseCd = stats.deathPulseCdAmount;
     }
 
     private void Update()
     {
-        if(stats.deathPulseCd < 0)
+        if (abilityIsActive)
         {
-            stats.deathPulseCd = stats.deathPulseCdAmount;
-            DeathPulseSpawning();
-        }
-        else
-        {
-            stats.deathPulseCd -= Time.deltaTime;
+            if (deathPulseCd < 0)
+            {
+                deathPulseCd = stats.maxDeathPulseCd;
+                DeathPulseSpawning();
+            }
+            else
+            {
+                deathPulseCd -= Time.deltaTime;
+            }
         }
     }
     public void DeathPulseSpawning()
@@ -51,6 +61,8 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
         for (int i = 0; i < stats.count; i++)
         {
             var enemies = PlayerShooting.instance.EnemiesInRange(radius);
+            if (enemies.Length <= 0) return;
+
             var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
             var deathpulse = pool.Get();
             deathpulse.transform.position = spawnPoint.transform.position;
@@ -65,5 +77,11 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
         if (_usedPool) pool.Release(obj);
         else Destroy(obj.gameObject);
     }
+
+    void DoActiveAbility()
+    {
+        abilityIsActive = true;
+    }
+
 }
 
