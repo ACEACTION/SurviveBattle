@@ -10,11 +10,7 @@ public class SatelliteCenter : MonoBehaviour
     [SerializeField] Transform[] level2Satellites;
     [SerializeField] Transform[] level3Satellites;
 
-    void Start()
-    {
-        
-    }
-
+    
     
     void Update()
     {
@@ -45,14 +41,6 @@ public class SatelliteCenter : MonoBehaviour
         {
             level3Satellites[i].gameObject.SetActive(true);
         }
-    }
-
-    public void UpgradeSpeed(float speed)
-    {
-        for (int i = 0; i < level3Satellites.Length; i++)
-        {
-            level3Satellites[i].GetComponent<Satellite>().rotSpeed = speed;
-        }
-    }
+    }    
 
 }

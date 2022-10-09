@@ -10,18 +10,14 @@ public class PlayerAbility_Satellite : MonoBehaviour
     [SerializeField] SatelliteCenter satelliteCenterPrefab;
     SatelliteCenter satelliteCenter;
 
-    public delegate void PlayerSatelliteAbilityDel();
-    public static PlayerSatelliteAbilityDel PlayerAbilitySatellite;
-
-    public static Action<float> UpgradeSatelliteSpeed;
+    public static Action AddSatellite;
 
     private void Start()
     {
-        PlayerAbilitySatellite = SatelliteProcess;
-        UpgradeSatelliteSpeed = UpgradeSpeed;
+        AddSatellite = SatelliteCountProcess;
     }
 
-    void SatelliteProcess()
+    void SatelliteCountProcess()
     {
         if (satelliteCounter == 0)
         {
@@ -38,11 +34,6 @@ public class PlayerAbility_Satellite : MonoBehaviour
         }
 
         satelliteCounter++;
-    }
-
-    void UpgradeSpeed(float speed)
-    {
-        satelliteCenter.UpgradeSpeed(speed);
     }
 
 }

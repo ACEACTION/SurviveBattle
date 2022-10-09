@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Satellite : MonoBehaviour
 {
-    public float rotSpeed;
+    [SerializeField] SatelliteStats stats;
 
     void Start()
     {
@@ -14,7 +14,8 @@ public class Satellite : MonoBehaviour
     
     void Update()
     {
-        transform.RotateAround(transform.parent.position, Vector3.up, rotSpeed * Time.deltaTime);
+        transform.RotateAround(transform.parent.position, Vector3.up, 
+            stats.satelliteSpeed * Time.deltaTime);
     }
 
 
