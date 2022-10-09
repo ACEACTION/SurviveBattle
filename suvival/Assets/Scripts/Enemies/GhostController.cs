@@ -7,7 +7,6 @@ public class GhostController : MonoBehaviour
 {
 
 
-    [SerializeField] PlayerController player;
     [SerializeField] EnemyStats enemyStats;
     [SerializeField] GameManager gameManager;
     [SerializeField] float damage;
@@ -27,7 +26,7 @@ public class GhostController : MonoBehaviour
 
     private void Update()
     {
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(PlayerShooting.instance.transform.position);
 
     }
 
@@ -43,7 +42,6 @@ public class GhostController : MonoBehaviour
         {
             gameManager.RemoveFromList(this.gameObject);
 
-            player.TakeDamage(damage);
             _killAction(this.gameObject);
         }
     }

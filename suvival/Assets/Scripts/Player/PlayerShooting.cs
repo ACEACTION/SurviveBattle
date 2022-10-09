@@ -20,6 +20,8 @@ public class PlayerShooting : MonoBehaviour
     public float attackSpeed;
     public float attackCd;
     [SerializeField] bool diagonalArrows;
+    [SerializeField] bool sidedArrows;
+
 
     [SerializeField] Animator anim;
     [SerializeField] float radius;
@@ -108,11 +110,28 @@ public class PlayerShooting : MonoBehaviour
         projectile.direction = closestEnemy.transform.position - transform.position;
         projectile.direction.y = 0;
         projectile.Init(KillProjectile);
-        if (diagonalArrows)
-        {
-            //diagonal arrows here
-            DiagonalArrows(projectile);
-        }
+        if(diagonalArrows) DiagonalArrows(projectile);
+        if (sidedArrows) sideArrows(projectile);
+
+    }
+
+    private void sideArrows(Projectile projectile)
+    {
+        //left projectile
+        var projLeft = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
+        projLeft.transform.position = bulletSpawnPoint.position;
+
+        projLeft.direction = Quaternion.AngleAxis(-75, Vector3.up * 10) * projectile.direction;
+
+        projLeft.Init(KillProjectile);
+
+        //right projectile
+        var projRight = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
+        projRight.transform.position = bulletSpawnPoint.position;
+
+        projRight.direction = Quaternion.AngleAxis(75, Vector3.up * 10) * projectile.direction;
+
+        projRight.Init(KillProjectile);
     }
 
     public void DiagonalArrows(Projectile projectile)

@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
 {
     public Vector3 direction;
     [SerializeField] private bool _usedPool;
+    [SerializeField] float destroyTimerCd;
+    [SerializeField] float destroyTimerCdAmount;
     private Action<Projectile> _killAction;
 
     [SerializeField] GameObject hitEffect;
@@ -30,12 +32,21 @@ public class Projectile : MonoBehaviour
         {
             Destroy(hitEffect.gameObject);
         }, false, 10, 20);
-
+        destroyTimerCd = destroyTimerCdAmount;
     }
 
     private void Update()
     {
         transform.position += direction * projectileSpeed * Time.deltaTime;
+        if (destroyTimerCd <= 0)
+        {
+            destroyTimerCd = destroyTimerCdAmount;
+            _killAction(this);
+        }
+        else
+            destroyTimerCd -= Time.deltaTime;
+
+
     }
     public void Init(Action<Projectile> killAction)
     {

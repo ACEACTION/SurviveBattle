@@ -1145,7 +1145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a53d3e60a44ad04481788a73b8a6577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1923259790}
   enemyStats: {fileID: 11400000, guid: 8c6c86a7850f14249ac22c4fdf208711, type: 2}
   gameManager: {fileID: 911384911}
   damage: 0
@@ -1726,7 +1725,7 @@ PrefabInstance:
     - target: {fileID: 5363799508854685541, guid: 20be8438987beb246a084356542b96b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.13
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 5363799508854685541, guid: 20be8438987beb246a084356542b96b2,
         type: 3}
@@ -2118,12 +2117,12 @@ PrefabInstance:
     - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
       propertyPath: radius
-      value: 5000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
       propertyPath: attackCdAmount
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373,
         type: 3}
