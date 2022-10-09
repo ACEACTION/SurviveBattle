@@ -44,14 +44,11 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
     public void LightningSpawn()
     {
-        for (int i = 0; i < stats.count; i++)
-        {
-            var lightning = _usedPool ? pool.Get() : Instantiate(lightningPrefab);
-            var enemies = PlayerShooting.instance.EnemiesInRange(stats.radius);
-            var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
-            lightning.transform.position = chosenEnemy.transform.position + offset;
-            lightning.GetComponent<LightningController>().Init(KillProjectile, stats.radius);
-        }
+        var lightning = _usedPool ? pool.Get() : Instantiate(lightningPrefab);
+        var enemies = PlayerShooting.instance.EnemiesInRange(stats.radius);
+        var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
+        lightning.transform.position = chosenEnemy.transform.position + offset;
+        lightning.GetComponent<LightningController>().Init(KillProjectile, stats.radius);
     }
 
     private void KillProjectile(GameObject obj)
