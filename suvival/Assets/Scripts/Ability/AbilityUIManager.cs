@@ -9,26 +9,33 @@ public class AbilityUIManager : MonoBehaviour
     [SerializeField] AbilitySelection abilitySelection;
     Ability[] findedAbilitiesList = new Ability[3];
     int findedListIndex = 0;
-    
 
-    private void Start()
+    public static AbilityUIManager Instance;
+    private void Awake()
     {
-
+        if (Instance == null)
+            Instance = this;
     }
-
 
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.J))
-            SetAbility();
+            OpenAbilityPanel();
     }
 
-    public void SetAbility()
+    public void OpenAbilityPanel()
     {
         DynamicJoystick.Instance.gameObject.SetActive(false);
         abilitySelection.gameObject.SetActive(true);
-        abilitySelection.SetAbilitySlotss(FindAbility());
+        abilitySelection.SetAbilitySlots(FindAbility());
         Time.timeScale = 0;
+    }
+
+    public void CloseAbilityPanel()
+    {
+        DynamicJoystick.Instance.gameObject.SetActive(true);
+        abilitySelection.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     Ability[] FindAbility()

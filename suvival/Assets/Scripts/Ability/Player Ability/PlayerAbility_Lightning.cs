@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using System;
+using Random = UnityEngine.Random;
 
 public class PlayerAbility_Lightning : MonoBehaviour
 {
@@ -10,8 +12,8 @@ public class PlayerAbility_Lightning : MonoBehaviour
     [SerializeField] LightninStats stats;
     [SerializeField] Vector3 offset;
     [SerializeField] bool _usedPool;
-
-
+    bool activeAbility;
+    public static Action DoActiveAbilityAction;
 
     private void Start()
     {
@@ -33,13 +35,15 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
     private void Update()
     {
-         if (stats.cd < 0)
-         {
-             stats.cd = stats.cdDefault;
-             LightningSpawn();
-         }
-         else stats.cd -= Time.deltaTime;
- 
+        if (activeAbility)
+        {
+            if (stats.maxCd < 0)
+            {
+                stats.maxCd = stats.maxCdDefault;
+                LightningSpawn();
+            }
+            else stats.maxCd -= Time.deltaTime;
+        }
     }
 
     public void LightningSpawn()
@@ -56,4 +60,10 @@ public class PlayerAbility_Lightning : MonoBehaviour
         if (_usedPool) pool.Release(obj);
         else Destroy(obj.gameObject);
     }
+
+    public void DoActiveAbility()
+    {
+        activeAbility = true;
+    }
+
 }

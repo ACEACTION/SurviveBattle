@@ -36,7 +36,6 @@ public class LightningAbility : Ability
     {
         base.ResetAbility();
         stats.ResetStats();
-
     }
 
     public override void DoActive()
@@ -58,7 +57,7 @@ public class LightningAbility : Ability
                 stats.AddRadius(radiusLevel4);
                 break;
             case 5:
-                stats.AddCount(countLevel5);
+                stats.SetCount(countLevel5);
                 break;
             case 6:
                 stats.AddDamage(dmgLevel6);
@@ -70,7 +69,7 @@ public class LightningAbility : Ability
                 stats.AddRadius(radiusLevel8);
                 break;
             case 9:
-                stats.AddCount(countLevel9);
+                stats.SetCount(countLevel9);
                 break;
             case 10:
                 stats.AddDamage(dmgLevel10);

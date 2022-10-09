@@ -15,7 +15,34 @@ public class LightninStats : ScriptableObject
     public int damage;
     public int damageDefault;
 
-    public float cd;
-    public float cdDefault;
+    public float maxCd;
+    public float maxCdDefault;
 
+
+    public void ResetStats()
+    {
+        radius = radiusDefault;
+        count = countDefault;
+        damage = damageDefault;
+        maxCd = maxCdDefault;
+    }
+
+    public void AddDamage(int d)
+    {
+        damage += d;
+    }
+
+    public void SetCount(int c) 
+    { 
+        count = c; 
+    }
+
+    public void AddRadius(float r) {
+        radius += r;
+    }
+
+    public void MinusMaxCd(float c)
+    {
+        maxCd -= c;
+    }
 }
