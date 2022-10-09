@@ -5165,6 +5165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   _usedPool: 1
+  destroyTimerCd: 0
+  destroyTimerCdAmount: 2
   hitEffect: {fileID: 1862546671279240, guid: b761cb055dbdf1947a68d6c857190837, type: 3}
   projectileSpeed: 3
 --- !u!1 &8596831084584239377
