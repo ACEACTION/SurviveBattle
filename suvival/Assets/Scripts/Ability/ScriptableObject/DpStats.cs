@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="DPStats")]
+[CreateAssetMenu(menuName = "Stats/DPStats")]
 public class DpStats : ScriptableObject
 {
     public float radius;

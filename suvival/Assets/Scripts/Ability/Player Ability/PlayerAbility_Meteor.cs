@@ -10,15 +10,17 @@ public class PlayerAbility_Meteor : MonoBehaviour
     [SerializeField] float randomOffsetScale;
     [SerializeField] GameObject meteorPrefab;
     public ObjectPool<GameObject> meteorPool;
-    public int meteorCounter;
+    bool activeAbility;
+    [SerializeField] MeteorStats stats;
+    float cd;
 
-    public static Action<int> AddMeteorCounterAction;
+    public static Action DoActiveAbilityAction;
 
     void Start()
     {
-        AddMeteorCounterAction = AddMeteorCounter;
         meteorPool = new ObjectPool<GameObject>(CreateMeteor, OnGet, OnRelease, OnDestoryMeteor, false, 100, 100000);
-
+        cd = stats.maxCd;
+        DoActiveAbilityAction = DoActiveAbility;
     }
 
 
@@ -52,6 +54,16 @@ public class PlayerAbility_Meteor : MonoBehaviour
 
     void Update()
     {
+        if (activeAbility)
+        {
+            cd -= Time.deltaTime;
+            if (cd <= 0)
+            {
+                MakeMeteor();
+                cd = stats.maxCd;
+            }
+        }
+
         if (Input.GetKeyUp(KeyCode.E))    
             MakeMeteor();
     }
@@ -59,7 +71,7 @@ public class PlayerAbility_Meteor : MonoBehaviour
 
     void MakeMeteor()
     {
-        for (int i = 0; i < meteorCounter; i++)
+        for (int i = 0; i < stats.counter; i++)
         {
             Meteor meteor = meteorPool.Get().GetComponent<Meteor>();
             meteor.InitMeteor(OnReleaseMeteor);
@@ -74,10 +86,10 @@ public class PlayerAbility_Meteor : MonoBehaviour
                            Random.Range(transform.position.z - randomOffsetScale, 
                             transform.position.z + randomOffsetScale));
     }
-    
-    void AddMeteorCounter(int count)
+
+    void DoActiveAbility()
     {
-        meteorCounter = count;
+        activeAbility = true;
     }
 
 

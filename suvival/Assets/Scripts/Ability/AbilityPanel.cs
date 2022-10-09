@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilitySelection : MonoBehaviour
+public class AbilityPanel : MonoBehaviour
 {
     [SerializeField] AbilitySlot[] slots;
 

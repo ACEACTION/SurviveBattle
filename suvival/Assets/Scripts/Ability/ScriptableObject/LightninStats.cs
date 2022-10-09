@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "LightninStats")]
+[CreateAssetMenu(menuName = "Stats/LightninStats")]
 public class LightninStats : ScriptableObject
 {
     public float radius;

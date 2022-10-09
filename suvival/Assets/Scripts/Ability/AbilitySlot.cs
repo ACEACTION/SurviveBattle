@@ -20,7 +20,7 @@ public class AbilitySlot : MonoBehaviour
     public void SetSlotsInfo(Ability ability)
     {
         abilityNameTxt.text = ability.abilityName;
-        abilityLevelTxt.text = ability.abilityLevel.ToString();
+        abilityLevelTxt.text = (ability.abilityLevel + 1).ToString();
         abilityIcon.sprite = ability.abilityIcon;
         abilityDescText.text = ability.abilityDesc;
         

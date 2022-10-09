@@ -6,7 +6,7 @@ public class AbilityUIManager : MonoBehaviour
 {
     [SerializeField] List<Ability> abilities;
     List<Ability> abilitiesList = new List<Ability>();
-    [SerializeField] AbilitySelection abilitySelection;
+    [SerializeField] AbilityPanel abilityPanel;
     Ability[] findedAbilitiesList = new Ability[3];
     int findedListIndex = 0;
 
@@ -26,15 +26,15 @@ public class AbilityUIManager : MonoBehaviour
     public void OpenAbilityPanel()
     {
         DynamicJoystick.Instance.gameObject.SetActive(false);
-        abilitySelection.gameObject.SetActive(true);
-        abilitySelection.SetAbilitySlots(FindAbility());
+        abilityPanel.gameObject.SetActive(true);
+        abilityPanel.SetAbilitySlots(FindAbility());
         Time.timeScale = 0;
     }
 
     public void CloseAbilityPanel()
     {
         DynamicJoystick.Instance.gameObject.SetActive(true);
-        abilitySelection.gameObject.SetActive(false);
+        abilityPanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 

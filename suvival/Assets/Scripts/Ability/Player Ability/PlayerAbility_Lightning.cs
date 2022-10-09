@@ -14,9 +14,13 @@ public class PlayerAbility_Lightning : MonoBehaviour
     [SerializeField] bool _usedPool;
     bool activeAbility;
     public static Action DoActiveAbilityAction;
+    float cd;
 
     private void Start()
     {
+        DoActiveAbilityAction = DoActiveAbility;
+        cd = stats.maxCd;
+
         pool = new ObjectPool<GameObject>(() =>
         {
             return Instantiate(lightningPrefab);
@@ -37,12 +41,12 @@ public class PlayerAbility_Lightning : MonoBehaviour
     {
         if (activeAbility)
         {
-            if (stats.maxCd < 0)
+            if (cd < 0)
             {
-                stats.maxCd = stats.maxCdDefault;
+                cd = stats.maxCdDefault;
                 LightningSpawn();
             }
-            else stats.maxCd -= Time.deltaTime;
+            else cd -= Time.deltaTime;
         }
     }
 
@@ -50,6 +54,9 @@ public class PlayerAbility_Lightning : MonoBehaviour
     {
         var lightning = _usedPool ? pool.Get() : Instantiate(lightningPrefab);
         var enemies = PlayerShooting.instance.EnemiesInRange(stats.radius);
+
+        if (enemies.Length <= 0) return;
+
         var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
         lightning.transform.position = chosenEnemy.transform.position + offset;
         lightning.GetComponent<LightningController>().Init(KillProjectile, stats.radius);

@@ -40,7 +40,7 @@ public class Meteor : MonoBehaviour
             meteorArea.transform.position = transform.position;
             meteorArea.InitAction(meteorStats.OnReleaseMeteorArea);
             meteorArea.transform.localScale = new Vector3(
-                    meteorStats.meteorAreaScale, meteorStats.meteorAreaScale, meteorStats.meteorAreaScale);
+                    meteorStats.radius, meteorStats.radius, meteorStats.radius);
             isGrounded = true;
             ReleaseMeteor(gameObject);
         }

@@ -404,6 +404,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &441884784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 167171983616255148, guid: 42b87f32178b9f34899a361904379201, type: 3}
+  m_PrefabInstance: {fileID: 8454769883564023450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e892d2a0a3ac3204db8d80851175d92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &565782649 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 413515240585259405, guid: 42b87f32178b9f34899a361904379201, type: 3}
@@ -483,7 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomOffsetScale: 3
   meteorPrefab: {fileID: 113030, guid: 15639ed131bd9e84eae0ad4206bee815, type: 3}
-  meteorCounter: 0
+  stats: {fileID: 11400000, guid: fbfea435e207b214f8bc3abc99402f07, type: 2}
 --- !u!114 &1923259799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningPrefab: {fileID: 124998, guid: 31e252ed33e57b345b679eed24787c22, type: 3}
-  stats: {fileID: 11400000, guid: 59a377776e2af1e42bad494b3e20d67a, type: 2}
+  stats: {fileID: 11400000, guid: ab75f65f09c626c4d8a53095ecc367b4, type: 2}
   offset: {x: 0, y: 0, z: 0}
   _usedPool: 0
 --- !u!114 &1923259805
@@ -744,6 +755,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 195587672, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: abilityPanel
+      value: 
+      objectReference: {fileID: 441884784}
     - target: {fileID: 8454769882887122072, guid: 42b87f32178b9f34899a361904379201, type: 3}
       propertyPath: m_Name
       value: UI
