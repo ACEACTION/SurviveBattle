@@ -175,17 +175,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 206143603332850783, guid: 558e651981b054c428e922414d4b454e, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 206143603332850783, guid: 558e651981b054c428e922414d4b454e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2cbe2ec5a07bf424f93e2c04e1a30d0b, type: 2}
+      objectReference: {fileID: 2100000, guid: 72ad2f218c655b04cb0cf821ed6982f2, type: 2}
     - target: {fileID: 919132149155446097, guid: 558e651981b054c428e922414d4b454e, type: 3}
       propertyPath: m_Name
       value: chest
       objectReference: {fileID: 0}
     - target: {fileID: 2911009762784328665, guid: 558e651981b054c428e922414d4b454e, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911009762784328665, guid: 558e651981b054c428e922414d4b454e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2cbe2ec5a07bf424f93e2c04e1a30d0b, type: 2}
+      objectReference: {fileID: 2100000, guid: 72ad2f218c655b04cb0cf821ed6982f2, type: 2}
+    - target: {fileID: 6293914274195094527, guid: 558e651981b054c428e922414d4b454e, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 558e651981b054c428e922414d4b454e, type: 3}
 --- !u!1 &330585543
@@ -352,8 +364,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.78414935, g: 0.4669811, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.8220754, g: 0.2588235, b: 1, a: 1}
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -410,14 +422,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_LocalRotation: {x: 0.8457137, y: 0.34343526, z: -0.35499835, w: 0.20198207}
+  m_LocalRotation: {x: 0.44641092, y: 0.79617643, z: -0.15129748, w: 0.37938026}
   m_LocalPosition: {x: 3.64, y: 11.68, z: -6.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 35.837, y: 214.718, z: 147.34}
+  m_LocalEulerAnglesHint: {x: 35.425, y: 144.86, z: 47.009}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
