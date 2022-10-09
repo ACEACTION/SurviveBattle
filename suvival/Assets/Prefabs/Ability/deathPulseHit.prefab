@@ -24248,6 +24248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4699446978678578}
+  - component: {fileID: 3758565250517638268}
   m_Layer: 0
   m_Name: deathPulseHit
   m_TagString: Untagged
@@ -24279,6 +24280,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3758565250517638268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653991083014422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a646abbcf2231d4dab3cdd87561c610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyCd: 3
+  _destroyActivator: 0
 --- !u!1 &1679121103525562
 GameObject:
   m_ObjectHideFlags: 0
