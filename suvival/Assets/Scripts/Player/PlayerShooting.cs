@@ -16,6 +16,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject closestEnemy;
     public ProjectileStats stats;
     public float xp;
+    float attackCd;
 
     private ObjectPool<Projectile> pool;
     [SerializeField] bool diagonalArrows;
@@ -33,7 +34,7 @@ public class PlayerShooting : MonoBehaviour
     //methods
     private void Start()
     {
-        stats.attackCd = stats.attackCdAmount;
+        attackCd = stats.attackCdAmount;
         pool = new ObjectPool<Projectile>(() =>
         {
             return Instantiate(projectilePrefab);
@@ -52,18 +53,15 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        if(stats.attackCd <= 0)
+        if(attackCd <= 0)
         {
             //attack here
-            stats.attackCd = stats.attackCdAmount;
-
-
+            attackCd = stats.attackCdAmount;
             Fire();
         }
         else
         {
-
-           stats.attackCd -= Time.deltaTime;
+           attackCd -= Time.deltaTime;
         }
     }
     public Collider[] EnemiesInRange(float range)

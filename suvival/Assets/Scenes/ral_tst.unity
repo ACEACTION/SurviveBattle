@@ -759,6 +759,10 @@ PrefabInstance:
       propertyPath: abilityPanel
       value: 
       objectReference: {fileID: 441884784}
+    - target: {fileID: 195587672, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: abilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 811fe0c611961924993e2916a3da93a3, type: 2}
     - target: {fileID: 8454769882887122072, guid: 42b87f32178b9f34899a361904379201, type: 3}
       propertyPath: m_Name
       value: UI

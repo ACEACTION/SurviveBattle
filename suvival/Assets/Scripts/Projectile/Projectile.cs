@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position += direction * stats.moveSpeed * Time.deltaTime;
+        transform.position += direction * stats.projecMoveSpeed * Time.deltaTime;
         if (destroyTimerCd <= 0)
         {
             destroyTimerCd = destroyTimerCdAmount;

@@ -8,17 +8,47 @@ public class ProjectileStats : ScriptableObject
     public float damage;
     public float damageDefault;
 
-    public float moveSpeed;
-    public float moveSpeedDefault;
+    public float projecMoveSpeed;
+    public float projecMoveSpeedDefault;
 
-    public float attackCd;
     public float attackCdAmount;
+    public float defaultAttackCdAmount;
 
     public bool sidedArrows;
-    public bool sidedArrowsDefault = false;
-
     public bool diagonalArrows;
-    public bool diagonalArrowsDefault = false;
+
+    public  void ResetStats()
+    {
+        damage = damageDefault;
+        projecMoveSpeed = projecMoveSpeedDefault;
+        sidedArrows = false;
+        diagonalArrows = false;
+    }
+
+    public void AddDmg(int d)
+    {
+        damage += d;
+    }
+
+    public void AddProjMoveSpeed(int ms)
+    {
+        projecMoveSpeed += ms;
+    }
+
+    public void MinusAS(float cd)
+    {
+        attackCdAmount -= cd;
+    }
+
+    public void ActiveSideArrows()
+    {
+        sidedArrows = true;
+    }
+
+    public void ActiveDiagonalArrows()
+    {
+        diagonalArrows = true;
+    }
 
 
 }
