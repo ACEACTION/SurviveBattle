@@ -7,6 +7,7 @@ using UnityEngine.Pool;
 public class Projectile : MonoBehaviour
 {
     public Vector3 direction;
+    public ProjectileStats stats;
     [SerializeField] private bool _usedPool;
     [SerializeField] float destroyTimerCd;
     [SerializeField] float destroyTimerCdAmount;
@@ -14,8 +15,6 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] GameObject hitEffect;
     private ObjectPool<GameObject> pool;
-
-    [SerializeField] float projectileSpeed;
 
     private void Start()
     {
@@ -37,7 +36,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position += direction * projectileSpeed * Time.deltaTime;
+        transform.position += direction * stats.moveSpeed * Time.deltaTime;
         if (destroyTimerCd <= 0)
         {
             destroyTimerCd = destroyTimerCdAmount;
@@ -58,7 +57,7 @@ public class Projectile : MonoBehaviour
     {
         if (col.transform.CompareTag("Enemy"))
         {
-            print("colided");
+            col.gameObject.GetComponent<EnemyController>().stats.ReduceHp(stats.damage);
             var hiteffect = _usedPool ? pool.Get() : Instantiate(hitEffect);
             hiteffect.transform.position = col.transform.position;
             hiteffect.GetComponent<ProjectileHitEffect>().Init(KillEffect);

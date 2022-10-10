@@ -14,18 +14,15 @@ public class PlayerShooting : MonoBehaviour
     }
     public Collider[] enemies;
     public GameObject closestEnemy;
-
+    public ProjectileStats stats;
 
     private ObjectPool<Projectile> pool;
-    public float attackSpeed;
-    public float attackCd;
     [SerializeField] bool diagonalArrows;
     [SerializeField] bool sidedArrows;
 
 
     [SerializeField] Animator anim;
     [SerializeField] float radius;
-    [SerializeField] float attackCdAmount;
 
     [SerializeField] Projectile projectilePrefab;
     [SerializeField] private bool _usedPool;
@@ -35,7 +32,7 @@ public class PlayerShooting : MonoBehaviour
     //methods
     private void Start()
     {
-        attackCd = attackCdAmount;
+        stats.attackCd = stats.attackCdAmount;
         pool = new ObjectPool<Projectile>(() =>
         {
             return Instantiate(projectilePrefab);
@@ -54,10 +51,10 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        if(attackCd <= 0)
+        if(stats.attackCd <= 0)
         {
             //attack here
-            attackCd = attackCdAmount;
+            stats.attackCd = stats.attackCdAmount;
 
 
             Fire();
@@ -65,7 +62,7 @@ public class PlayerShooting : MonoBehaviour
         else
         {
 
-            attackCd -= Time.deltaTime;
+           stats.attackCd -= Time.deltaTime;
         }
     }
     public Collider[] EnemiesInRange(float range)
@@ -110,8 +107,10 @@ public class PlayerShooting : MonoBehaviour
         projectile.direction = closestEnemy.transform.position - transform.position;
         projectile.direction.y = 0;
         projectile.Init(KillProjectile);
-        if(diagonalArrows) DiagonalArrows(projectile);
-        if (sidedArrows) sideArrows(projectile);
+
+        //sided and diagonal arrows here
+        if(stats.diagonalArrows) DiagonalArrows(projectile);
+        if (stats.sidedArrows) sideArrows(projectile);
 
     }
 
