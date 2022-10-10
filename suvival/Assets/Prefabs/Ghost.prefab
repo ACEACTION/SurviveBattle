@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 4979865428565064759}
   - component: {fileID: 4979865428565064758}
   - component: {fileID: 1111265430024287297}
+  - component: {fileID: 1111265430024287303}
   m_Layer: 6
   m_Name: Ghost
   m_TagString: Enemy
@@ -532,10 +533,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.60067725
   m_Height: 1.2488921
   m_Direction: 1
-  m_Center: {x: 0, y: 0.7177378, z: 0}
+  m_Center: {x: 0.028545499, y: 0.7177378, z: 0}
 --- !u!195 &4979865428565064759
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -570,10 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a53d3e60a44ad04481788a73b8a6577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemyStats: {fileID: 11400000, guid: 8c6c86a7850f14249ac22c4fdf208711, type: 2}
-  gameManager: {fileID: 0}
-  damage: 5
+  enemyStats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
 --- !u!54 &1111265430024287297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -590,6 +588,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1111265430024287303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4700592049911686623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99c7d689e2c00c4aa7921979d1fd459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 20
+  stats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &5147239379119065771
 GameObject:
   m_ObjectHideFlags: 0

@@ -64,7 +64,7 @@ public class WaveSpawner : MonoBehaviour
                 orcCount++;
                 var enemy = _usedPool ? pool.Get() : Instantiate(enemyPrefabs[1]);
                 enemy.transform.position = player.spawnPoints[Random.Range(0, player.spawnPoints.Length)].position;
-                enemy.GetComponent<GhostController>().Init(KillEnemy);
+                enemy.GetComponent<EnemyController>().Init(KillEnemy);
             }
             else
             {
@@ -72,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
                 orcCount++;
                 var enemy = _usedPool ? pool.Get() : Instantiate(enemyPrefabs[0]);
                 enemy.transform.position = player.spawnPoints[Random.Range(0, player.spawnPoints.Length)].position;
-                enemy.GetComponent<GhostController>().Init(KillEnemy);
+                enemy.GetComponent<EnemyController>().Init(KillEnemy);
             }
 
 

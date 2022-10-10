@@ -5064,7 +5064,7 @@ GameObject:
   - component: {fileID: 8595698007394254194}
   m_Layer: 0
   m_Name: PlayerProjectile
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5164,11 +5164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
+  stats: {fileID: 11400000, guid: a4459ae6f34d7a541b9d5709adcdd027, type: 2}
   _usedPool: 1
   destroyTimerCd: 0
   destroyTimerCdAmount: 2
   hitEffect: {fileID: 1862546671279240, guid: b761cb055dbdf1947a68d6c857190837, type: 3}
-  projectileSpeed: 3
 --- !u!1 &8596831084584239377
 GameObject:
   m_ObjectHideFlags: 0

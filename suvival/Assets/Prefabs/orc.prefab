@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 706315029164006366}
   - component: {fileID: 2490672509100179585}
   - component: {fileID: 2490672509100179586}
+  - component: {fileID: 2490672509100179591}
   m_Layer: 6
   m_Name: orc
   m_TagString: Enemy
@@ -423,10 +424,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1.0636148
   m_Height: 2.471366
   m_Direction: 1
-  m_Center: {x: 0, y: 0.73568296, z: -0}
+  m_Center: {x: 0.078165054, y: 0.73568296, z: 0}
 --- !u!54 &706315029164006366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -477,10 +478,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a53d3e60a44ad04481788a73b8a6577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemyStats: {fileID: 11400000, guid: 8c6c86a7850f14249ac22c4fdf208711, type: 2}
-  gameManager: {fileID: 0}
-  damage: 0
+  enemyStats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
+--- !u!114 &2490672509100179591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219090539091412514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99c7d689e2c00c4aa7921979d1fd459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 20
+  stats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &3219093792890260978
 GameObject:
   m_ObjectHideFlags: 0

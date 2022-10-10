@@ -57,7 +57,10 @@ public class Projectile : MonoBehaviour
     {
         if (col.transform.CompareTag("Enemy"))
         {
-            col.gameObject.GetComponent<EnemyController>().stats.ReduceHp(stats.damage);
+            var enemy = col.gameObject.GetComponent<EnemyController>();
+            print(col.gameObject.tag);
+            enemy.ReduceHp(stats.damageDefault);
+
             var hiteffect = _usedPool ? pool.Get() : Instantiate(hitEffect);
             hiteffect.transform.position = col.transform.position;
             hiteffect.GetComponent<ProjectileHitEffect>().Init(KillEffect);

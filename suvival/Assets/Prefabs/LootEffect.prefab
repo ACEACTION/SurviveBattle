@@ -153,8 +153,9 @@ GameObject:
   - component: {fileID: 198366445117684560}
   - component: {fileID: 65949703743157518}
   - component: {fileID: 54944604118038702}
+  - component: {fileID: -4532454363440229416}
   m_Layer: 0
-  m_Name: p_projectile
+  m_Name: LootEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5019,6 +5020,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4532454363440229416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661707786246352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c589d4de75604478c11102f6fe4061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
 --- !u!1 &1735373116630442
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,16 +8,13 @@ public class GhostController : MonoBehaviour
 
 
     [SerializeField] EnemyStats enemyStats;
-    [SerializeField] GameManager gameManager;
-    [SerializeField] float damage;
 
-    private Action<GameObject> _killAction;
 
     NavMeshAgent agent;
 
     private void Start()
     {
-        gameManager.AddToList(this.gameObject);
+        GameManager.instance.AddToList(this.gameObject);
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = enemyStats.movespeed;
@@ -30,19 +27,4 @@ public class GhostController : MonoBehaviour
 
     }
 
-    public void Init(Action<GameObject> killAction)
-    {
-        _killAction = killAction;
-    }
-
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform.CompareTag("Player"))
-        {
-            gameManager.RemoveFromList(this.gameObject);
-
-            _killAction(this.gameObject);
-        }
-    }
 }

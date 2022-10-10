@@ -7,6 +7,11 @@ using UnityEngine.Pool;
 public class EnemyStats : ScriptableObject
 {
     public float hp;
+    public float hpDefault;
+
+    public float damage;
+    public float damageDefault;
+
     public float movespeed;
     public int xpAmount;
        
@@ -49,7 +54,6 @@ public class EnemyStats : ScriptableObject
             Destroy(deathEffect.gameObject);
         }, false, 10, 20);
 
-
     }
 
 
@@ -64,8 +68,10 @@ public class EnemyStats : ScriptableObject
     }
 
 
-    public void ReduceHp(float damage)
+
+
+    public void AddXp(float xp)
     {
-        hp -= damage;
+        PlayerShooting.instance.xp += xp;
     }
 }

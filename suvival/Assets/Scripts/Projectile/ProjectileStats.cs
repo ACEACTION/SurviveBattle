@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileStats : MonoBehaviour
+[CreateAssetMenu(menuName = "ProjectileStats")]
+public class ProjectileStats : ScriptableObject
 {
     public float damage;
     public float damageDefault;

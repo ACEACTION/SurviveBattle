@@ -15,6 +15,7 @@ public class PlayerShooting : MonoBehaviour
     public Collider[] enemies;
     public GameObject closestEnemy;
     public ProjectileStats stats;
+    public float xp;
 
     private ObjectPool<Projectile> pool;
     [SerializeField] bool diagonalArrows;
