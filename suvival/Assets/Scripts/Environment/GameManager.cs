@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    [SerializeField] int maxXp;
+    [SerializeField] int xp;
+    [SerializeField] int level;
+    public List<GameObject> enemiesList = new List<GameObject>();
+    public static GameManager Instance;
+
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
     }
-    public List<GameObject> enemiesList = new List<GameObject>();
 
 
     //methods
@@ -23,4 +27,10 @@ public class GameManager : MonoBehaviour
     {
         enemiesList.Remove(obj);
     }
+
+    public void AddXp(int xp)
+    {
+        this.xp = xp;
+    }
+
 }

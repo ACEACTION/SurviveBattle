@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            GameManager.instance.RemoveFromList(this.gameObject);
+            GameManager.Instance.RemoveFromList(this.gameObject);
 
         }
     }
