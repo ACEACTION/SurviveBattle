@@ -5,7 +5,8 @@ using System;
 
 public class MeteorArea : MonoBehaviour
 {
-    Action<GameObject> ReleaseMeteorArea;    
+    Action<GameObject> ReleaseMeteorArea;
+    float dmg;
     IEnumerator Start()
     {
         yield return new WaitForSeconds(2f);
@@ -13,9 +14,18 @@ public class MeteorArea : MonoBehaviour
     }
     
 
-    public void InitAction(Action<GameObject> action)
+    public void InitAction(Action<GameObject> action, float d)
     {
         ReleaseMeteorArea = action;
+        dmg = d;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyController>()?.ReduceHp(dmg);
+        }
     }
 
 }

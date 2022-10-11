@@ -36,14 +36,20 @@ public class Meteor : MonoBehaviour
 
         if (Vector3.Distance(transform.position, moveDir) <= 1f && !isGrounded)
         {
-            MeteorArea meteorArea = meteorStats.meteorAreaPool.Get().GetComponent<MeteorArea>();
-            meteorArea.transform.position = transform.position;
-            meteorArea.InitAction(meteorStats.OnReleaseMeteorArea);
-            meteorArea.transform.localScale = new Vector3(
-                    meteorStats.radius, meteorStats.radius, meteorStats.radius);
+            MakeMeteorArea();
             isGrounded = true;
             ReleaseMeteor(gameObject);
         }
+    }
+
+    private void MakeMeteorArea()
+    {
+        MeteorArea meteorArea = meteorStats.meteorAreaPool.Get().GetComponent<MeteorArea>();
+        meteorArea.transform.position = transform.position;
+        meteorArea.InitAction(meteorStats.OnReleaseMeteorArea, meteorStats.dmg);
+        meteorArea.transform.localScale = new Vector3(
+                meteorStats.radius, meteorStats.radius, meteorStats.radius);
+
     }
 
     void Move()

@@ -6,12 +6,6 @@ public class Satellite : MonoBehaviour
 {
     [SerializeField] SatelliteStats stats;
 
-    void Start()
-    {
-        
-    }
-     
-    
     void Update()
     {
         transform.RotateAround(transform.parent.position, Vector3.up, 
@@ -23,7 +17,7 @@ public class Satellite : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            // destroy enemy
+            other.GetComponent<EnemyController>()?.ReduceHp(stats.dmg);
         }
     }
 
