@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 20398
+  controlID: 27465
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 20399
+  controlID: 27466
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 20400
+  controlID: 27467
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 506a0000
-      m_LastClickedID: 27216
-      m_ExpandedIDs: 4681ffff06d2ffff4ee1ffff54e1ffff64e1ffff54e9fffff2f9fffffcf9ffff2afaffff2cfbffff
+      m_SelectedIDs: 526ffeff
+      m_LastClickedID: -102574
+      m_ExpandedIDs: 306ffeff406ffeff526ffeff1074feff1087feff2889feff4681ffff06d2ffff4ee1ffff54e1ffff64e1fffff2f9ffff2afaffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -497,14 +497,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 370.8066, y: 1140.8772, z: -20.424757}
+    m_Target: {x: -6.1396794, y: 13.039369, z: 21.947956}
     speed: 2
-    m_Value: {x: 370.8066, y: 1140.8772, z: -20.424757}
+    m_Value: {x: -6.1396794, y: 13.039369, z: 21.947956}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -533,17 +533,17 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -551,17 +551,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.000093148934, y: 0.99987644, z: -0.006308904, w: -0.014698276}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.00009314893, y: 0.99987644, z: -0.006308904, w: -0.014698276}
   m_Size:
-    m_Target: 1274.5499
+    m_Target: 12.114524
     speed: 2
-    m_Value: 1274.5499
+    m_Value: 12.114524
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1.06047
     m_SpeedNormalized: 0.53
@@ -776,22 +776,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/UI/Menu
+    - Assets/Sprites/Healthbar
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Sprites/UI/Menu
+  - Assets/Sprites/Healthbar
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\digi max\UnityProjects\SurviveBattle\suvival
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 307.80002}
-    m_SelectedIDs: f8700000
-    m_LastClickedID: 28920
-    m_ExpandedIDs: 00000000086f00000a6f00000c6f00000e6f0000106f0000c6700000ec70000000ca9a3b
+    scrollPos: {x: 0, y: 291.80002}
+    m_SelectedIDs: 44990000
+    m_LastClickedID: 39236
+    m_ExpandedIDs: 00000000086f00000a6f00000c6f00000e6f0000106f0000c670000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -844,10 +844,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 506a0000
-    m_LastClickedInstanceID: 27216
+    m_SelectedInstanceIDs: 526ffeff
+    m_LastClickedInstanceID: -102574
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300009a7a000000000000227d0000bc7d0000987d0000
+    m_ExpandedInstanceIDs: c62300009a7a000000000000227d0000bc7d0000987d000050990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -933,7 +933,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 27216
+  m_LastSelectedObjectID: -102574
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
