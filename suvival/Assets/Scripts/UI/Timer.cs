@@ -7,21 +7,37 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     // params
-    public float t = 0;
+    [SerializeField] float levelTime = 0;
     TimeSpan timeSpan;
-    private bool countTime = true;
+    public bool activeTimer;
 
     // references
     [SerializeField] private TextMeshProUGUI timerText;
 
+
+    // singleton
+    public static Timer Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
+
     void Update()
     {
-        if (countTime)
+        if (activeTimer)
         {
-            t += Time.deltaTime;
-            timeSpan = TimeSpan.FromSeconds(t);
-            timerText.text = timeSpan.Hours + ":" + timeSpan.Minutes
-                + ":" + timeSpan.Seconds;
+            levelTime -= Time.deltaTime;
+            timeSpan = TimeSpan.FromSeconds(levelTime);
+            timerText.text = String.Concat(timeSpan.Minutes,
+                ":", timeSpan.Seconds);
+
+            if (levelTime <= 0)
+            {
+                levelTime = 0;
+                activeTimer = false;
+            }
         }
     }
 
