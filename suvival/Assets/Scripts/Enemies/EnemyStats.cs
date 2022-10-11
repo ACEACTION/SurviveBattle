@@ -70,8 +70,4 @@ public class EnemyStats : ScriptableObject
 
 
 
-    public void AddXp(float xp)
-    {
-        PlayerShooting.instance.xp += xp;
-    }
 }

@@ -797,10 +797,10 @@ MonoBehaviour:
   _usedPool: 1
   player: {fileID: 1923259790}
   enemyPrefabs:
-  - {fileID: 3219090539091412514, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
   - {fileID: 4700592049911686623, guid: 20be8438987beb246a084356542b96b2, type: 3}
+  - {fileID: 3219090539091412514, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
   radius: 41.68
-  enemiesAmount: 2
+  enemiesAmount: 400
   spawnPoint: {fileID: 412488616}
   cdBetweenSpawns: 0.3
   gameManager: {fileID: 911384911}

@@ -103,7 +103,7 @@ public class PlayerShooting : MonoBehaviour
         var projectile = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         
         projectile.transform.position = bulletSpawnPoint.position;
-        projectile.direction = closestEnemy.hitBox.transform.position - transform.position;
+        projectile.direction = closestEnemy.hitBox.transform.position - bulletSpawnPoint.transform.position;
         projectile.direction.y = 0;
         projectile.Init(KillProjectile);
 
