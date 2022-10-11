@@ -404,17 +404,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &441884784 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 167171983616255148, guid: 42b87f32178b9f34899a361904379201, type: 3}
-  m_PrefabInstance: {fileID: 8454769883564023450}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e892d2a0a3ac3204db8d80851175d92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &565782649 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 413515240585259405, guid: 42b87f32178b9f34899a361904379201, type: 3}
@@ -524,6 +513,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: ab75f65f09c626c4d8a53095ecc367b4, type: 2}
   offset: {x: 0, y: 0, z: 0}
   _usedPool: 0
+  activeAbility: 0
 --- !u!114 &1923259805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,11 +526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9227757c85749e4f8542d4b43f27f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathPulseCd: 0
   deathPulsePrefab: {fileID: 0}
   stats: {fileID: 11400000, guid: bba17738943885344906d57dd5b0b73d, type: 2}
   radius: 0
   spawnPoint: {fileID: 0}
   _usedPool: 0
+  abilityIsActive: 0
 --- !u!1001 &875166390022974021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -731,6 +723,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: a764761c1a70f554c9609887dde610be, type: 2}
+    - target: {fileID: 7724569978140777001, guid: d59f1058b7ce8574c800eee7f4d45373, type: 3}
       propertyPath: attackCdAmount
       value: 1
       objectReference: {fileID: 0}
@@ -755,14 +751,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 195587672, guid: 42b87f32178b9f34899a361904379201, type: 3}
-      propertyPath: abilityPanel
-      value: 
-      objectReference: {fileID: 441884784}
-    - target: {fileID: 195587672, guid: 42b87f32178b9f34899a361904379201, type: 3}
-      propertyPath: abilities.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 811fe0c611961924993e2916a3da93a3, type: 2}
+    - target: {fileID: 1660533163289652064, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660533163289652064, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519352041337287822, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519352041337287822, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519352041337287822, guid: 42b87f32178b9f34899a361904379201, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8454769882887122072, guid: 42b87f32178b9f34899a361904379201, type: 3}
       propertyPath: m_Name
       value: UI

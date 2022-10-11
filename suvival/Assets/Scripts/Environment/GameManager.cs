@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int maxXp;
-    [SerializeField] int xp;
-    [SerializeField] int level;
+    public int maxXp;
+    public int xp;
+    public int level;
     public List<GameObject> enemiesList = new List<GameObject>();
     public static GameManager Instance;
 
@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
             Instance = this;
     }
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A)) AddXp(20);
+    }
 
     //methods
     public void AddToList(GameObject obj)
@@ -30,7 +35,61 @@ public class GameManager : MonoBehaviour
 
     public void AddXp(int xp)
     {
-        this.xp = xp;
+        this.xp += xp;
+        XpSlider.Instance.SetSliderValue();
+        CheckLevel();
+    }
+
+    public void CheckLevel()
+    {
+        if (xp >= maxXp)
+        {
+            level++;
+            xp = 0;
+            XpSlider.Instance.SetLevelTxt();
+            XpSlider.Instance.ResetSlider();
+            SetMaxXp();
+            AbilityUIManager.Instance.OpenAbilityPanel();
+        }
+    }
+
+    void SetMaxXp()
+    {
+        switch (level)
+        {
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            case 7:
+
+                break;
+            case 8:
+
+                break;
+            case 9:
+
+                break;
+            case 10:
+
+                break;
+            case 11:
+
+                break;
+        }
+        
+        XpSlider.Instance.SetSliderMaxValue();
     }
 
 }

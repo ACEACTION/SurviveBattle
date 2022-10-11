@@ -24,7 +24,7 @@ public class EnemyXpLoot : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            XpSlider.Instance.SetSlider(stats.xpAmount);
+            GameManager.Instance.AddXp(stats.xpAmount);
             releaseLoot(this.gameObject);
         }
     }

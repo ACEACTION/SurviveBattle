@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e8013bb5e3c094f8302cce69185b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxXp: 100
+  xp: 0
+  level: 1
   enemiesList: []
