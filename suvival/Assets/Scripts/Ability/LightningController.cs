@@ -6,10 +6,11 @@ using UnityEngine;
 public class LightningController : MonoBehaviour
 {
     private Action<GameObject> _killAction;
+    [SerializeField] LightninStats stats;
     [SerializeField] float radius;
     [SerializeField] float destroyCd;
     [SerializeField] bool _destroyActivator;
-
+    [SerializeField] LayerMask enemyLayerMask;
     public void Init(Action<GameObject> killAction, float radius)
     {
         _killAction = killAction;
@@ -36,10 +37,13 @@ public class LightningController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            foreach(var enemy in PlayerShooting.instance.EnemiesInRange(radius))
+
+            var enemies = Physics.OverlapSphere(transform.position, radius/10, enemyLayerMask);
+
+            foreach (var x in enemies)
             {
-                //dmg them
-                print(enemy.name);
+                var enemy = x.gameObject.GetComponent<EnemyController>();
+                enemy.ReduceHp(stats.damage);
             }
             _destroyActivator = true;
         }

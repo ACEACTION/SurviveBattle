@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Stats/LightninStats")]
 public class LightninStats : ScriptableObject
 {
-    public float radius;
+    public float radius = 50f;
     public float radiusDefault = 50f;
 
     public int count;

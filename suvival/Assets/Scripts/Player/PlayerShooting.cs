@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
         instance = this;
     }
     public Collider[] enemies;
-    public GameObject closestEnemy;
+    public EnemyController closestEnemy;
     public ProjectileStats stats;
     public float xp;
     float attackCd;
@@ -70,7 +70,7 @@ public class PlayerShooting : MonoBehaviour
 
     }
 
-    public GameObject FindingClosestEnemy()
+    public EnemyController FindingClosestEnemy()
     {
         float distanceToClosestEnemy = Mathf.Infinity;
         closestEnemy = null;
@@ -81,7 +81,7 @@ public class PlayerShooting : MonoBehaviour
             if (distanceToEnemy < distanceToClosestEnemy)
             {
                 distanceToClosestEnemy = distanceToEnemy;
-                closestEnemy = enemy.gameObject;
+                closestEnemy = enemy.GetComponent<EnemyController>();
             }
         }
         return closestEnemy;
@@ -103,7 +103,7 @@ public class PlayerShooting : MonoBehaviour
         var projectile = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         
         projectile.transform.position = bulletSpawnPoint.position;
-        projectile.direction = closestEnemy.transform.position - transform.position;
+        projectile.direction = closestEnemy.hitBox.transform.position - transform.position;
         projectile.direction.y = 0;
         projectile.Init(KillProjectile);
 

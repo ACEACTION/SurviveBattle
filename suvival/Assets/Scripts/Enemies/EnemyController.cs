@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     private Action<GameObject> _killAction;
     public float hp;
     public EnemyStats stats;
+    public Transform hitBox;
     [SerializeField] Vector3 offset;
     [SerializeField] EnemyBloodSplat enemyBloodSplat;
     private void OnEnable()
