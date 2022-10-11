@@ -603,6 +603,8 @@ MonoBehaviour:
   hp: 20
   stats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
   offset: {x: 0, y: 0, z: 0}
+  enemyBloodSplat: {fileID: 517822681299204160, guid: 6b81dc8af1488a04e913e437e571a7d1,
+    type: 3}
 --- !u!1 &5147239379119065771
 GameObject:
   m_ObjectHideFlags: 0

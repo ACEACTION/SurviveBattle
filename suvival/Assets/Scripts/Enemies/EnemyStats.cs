@@ -17,8 +17,9 @@ public class EnemyStats : ScriptableObject
        
     public ObjectPool<GameObject> lootEffectPool;
     public GameObject lootEffectPrefab;
-    public ObjectPool<GameObject> DeathEffectPool;
-    public GameObject deathEffectPrefab;
+    public ObjectPool<GameObject> enemyBloodPool;
+    public Sprite[] enemyBloodSprites;
+    public GameObject enemyBloodPrefab;
 
 
     private void OnEnable()
@@ -40,9 +41,9 @@ public class EnemyStats : ScriptableObject
 
 
         //death effect
-        DeathEffectPool = new ObjectPool<GameObject>(() =>
+        enemyBloodPool = new ObjectPool<GameObject>(() =>
         {
-            return Instantiate(deathEffectPrefab);
+            return Instantiate(enemyBloodPrefab);
         }, deathEffect =>
         {
             deathEffect.gameObject.SetActive(true);
@@ -64,9 +65,8 @@ public class EnemyStats : ScriptableObject
 
     public void KillDeathEffect(GameObject obj)
     {
-        lootEffectPool.Release(obj);
+        enemyBloodPool.Release(obj);
     }
-
 
 
 

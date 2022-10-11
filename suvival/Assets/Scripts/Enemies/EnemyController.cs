@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EnemyController : MonoBehaviour
     public float hp;
     public EnemyStats stats;
     [SerializeField] Vector3 offset;
-
+    [SerializeField] EnemyBloodSplat enemyBloodSplat;
     private void OnEnable()
     {
         hp = stats.hpDefault;
@@ -35,9 +36,14 @@ public class EnemyController : MonoBehaviour
     }
     private void Die()
     {
-       // var deathEffect = stats.DeathEffectPool.Get();
-      //  deathEffect.transform.position = transform.position + offset;
-       // deathEffect.GetComponent<DeathEffectController>().Init(stats.KillDeathEffect);
+        var lootEffect = stats.lootEffectPool.Get();
+        lootEffect.transform.position = transform.position + offset;
+        lootEffect.GetComponent<EnemyXpLoot>().Init(stats.KillLootEffect);
+
+        var deathEffect = stats.enemyBloodPool.Get();
+        deathEffect.transform.position = transform.position + offset;
+        deathEffect.GetComponent<EnemyBloodSplat>().Init(stats.KillDeathEffect,
+                stats.enemyBloodSprites[Random.Range(0, stats.enemyBloodSprites.Length)]);                
         _killAction(this.gameObject);
 
 

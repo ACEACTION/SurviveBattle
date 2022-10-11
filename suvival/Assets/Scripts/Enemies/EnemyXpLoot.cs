@@ -14,9 +14,9 @@ public class EnemyXpLoot : MonoBehaviour
 
     private void Update()
     {
-        if(Vector3.Distance( PlayerShooting.instance.transform.position, this.transform.position) <= 3f)
+        if(Vector3.Distance( PlayerShooting.instance.transform.position, this.transform.position) <= 15f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, PlayerShooting.instance.transform.position, 2f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, PlayerShooting.instance.transform.position, 20f * Time.deltaTime);
         }
     }
 

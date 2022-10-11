@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class PlayerAbility_DeathPulse : MonoBehaviour
 {
-    float deathPulseCd;
+    public float deathPulseCd;
     private ObjectPool<GameObject> pool;
 
     [SerializeField] GameObject deathPulsePrefab;
@@ -15,7 +15,7 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
     [SerializeField] float radius;
     [SerializeField] Transform spawnPoint;
     [SerializeField] bool _usedPool;
-    bool abilityIsActive;
+    [SerializeField] bool abilityIsActive;
 
     public static Action DoActiveAbilityAction;
 
