@@ -384,6 +384,37 @@ Transform:
   m_Father: {fileID: 5363799508854685541}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3775546402319959921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7850474583711959533}
+  m_Layer: 0
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7850474583711959533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775546402319959921}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.1, y: 0.7, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5363799508854685541}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4342293292487245719
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +531,7 @@ Transform:
   - {fileID: 3271721536318368735}
   - {fileID: 8390878998916622673}
   - {fileID: 1358884392370961629}
+  - {fileID: 7850474583711959533}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -602,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 20
   stats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
+  hitBox: {fileID: 7850474583711959533}
   offset: {x: 0, y: 0, z: 0}
   enemyBloodSplat: {fileID: 517822681299204160, guid: 6b81dc8af1488a04e913e437e571a7d1,
     type: 3}

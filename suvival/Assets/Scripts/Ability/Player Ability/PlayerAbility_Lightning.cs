@@ -12,7 +12,7 @@ public class PlayerAbility_Lightning : MonoBehaviour
     [SerializeField] LightninStats stats;
     [SerializeField] Vector3 offset;
     [SerializeField] bool _usedPool;
-    bool activeAbility;
+    [SerializeField] bool activeAbility;
     public static Action DoActiveAbilityAction;
     float cd;
 
@@ -52,7 +52,7 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
     public void LightningSpawn()
     {
-        var lightning = _usedPool ? pool.Get() : Instantiate(lightningPrefab);
+        var lightning = pool.Get();
         var enemies = PlayerShooting.instance.EnemiesInRange(stats.radius);
 
         if (enemies.Length <= 0) return;
@@ -64,8 +64,8 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
     private void KillProjectile(GameObject obj)
     {
-        if (_usedPool) pool.Release(obj);
-        else Destroy(obj.gameObject);
+         pool.Release(obj);
+;
     }
 
     public void DoActiveAbility()
@@ -73,4 +73,9 @@ public class PlayerAbility_Lightning : MonoBehaviour
         activeAbility = true;
     }
 
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, stats.radius);
+    }
 }
