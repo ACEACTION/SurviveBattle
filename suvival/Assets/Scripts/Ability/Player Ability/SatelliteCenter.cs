@@ -5,7 +5,7 @@ using UnityEngine;
 public class SatelliteCenter : MonoBehaviour
 {
     [SerializeField] Vector3 posOffset;
-    [HideInInspector] public Transform player;
+    public Transform player;
     [SerializeField] Transform[] level1Satellites;
     [SerializeField] Transform[] level2Satellites;
     [SerializeField] Transform[] level3Satellites;
@@ -13,7 +13,7 @@ public class SatelliteCenter : MonoBehaviour
     
     
     void Update()
-    {
+    {        
         transform.position = player.position + posOffset;
     }
 
