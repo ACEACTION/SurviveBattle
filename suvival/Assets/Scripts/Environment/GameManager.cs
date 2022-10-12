@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
             XpSlider.Instance.ResetSlider();
             SetMaxXp();
             AbilityUIManager.Instance.OpenAbilityPanel();
+            PlayerController.Instance.PlayLevelUpEffect();
         }
     }
 

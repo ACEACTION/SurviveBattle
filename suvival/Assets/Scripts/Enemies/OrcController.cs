@@ -46,7 +46,6 @@ public class OrcController : MonoBehaviour
             //anim.SetBool("Attacking", true);
             gameManager.RemoveFromList(this.gameObject);
 
-            player.TakeDamage(damage);
             _killAction(this.gameObject);
         }
     }

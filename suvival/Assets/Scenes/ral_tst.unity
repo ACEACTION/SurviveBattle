@@ -433,6 +433,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1123995633 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19831394, guid: e661632416043f0478330ac8dad14737, type: 3}
+  m_PrefabInstance: {fileID: 1386482521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1160332857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +527,79 @@ PrefabInstance:
       objectReference: {fileID: 1923259809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5eb0c3ce564f04baba5d066eac1d75, type: 3}
+--- !u!1001 &1386482521
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 111786, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_Name
+      value: LevelUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 111786, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 16.20439
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 16.20439
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 16.20439
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454862, guid: e661632416043f0478330ac8dad14737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e661632416043f0478330ac8dad14737, type: 3}
 --- !u!1 &1923259786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7724569978140777006, guid: d59f1058b7ce8574c800eee7f4d45373, type: 3}
@@ -887,6 +965,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1923259790, guid: d59f1058b7ce8574c800eee7f4d45373, type: 3}
+      propertyPath: levelUpEffect
+      value: 
+      objectReference: {fileID: 1123995633}
+    - target: {fileID: 1923259790, guid: d59f1058b7ce8574c800eee7f4d45373, type: 3}
+      propertyPath: levelUpEffectPrefab
+      value: 
+      objectReference: {fileID: 1123995633}
     - target: {fileID: 1417660386412703986, guid: d59f1058b7ce8574c800eee7f4d45373, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

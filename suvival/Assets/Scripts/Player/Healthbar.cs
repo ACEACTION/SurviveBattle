@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour
 {
-    [SerializeField] int maxHp;
-    [SerializeField] int currentHp;
+    [SerializeField] float maxHp;
+    [SerializeField] float currentHp;
     [SerializeField] Slider hpSlider;
 
     private void Start()
@@ -15,19 +15,19 @@ public class Healthbar : MonoBehaviour
         SetSliderValue();
     }
 
-    public void SetMaxHp(int maxHp)
+    public void SetMaxHp(float maxHp)
     {
         this.maxHp = maxHp;
         hpSlider.value = maxHp;
     }
 
-    public void MinusHp(int hp)
+    public void MinusHp(float hp)
     {
         currentHp -= hp;
         SetSliderValue();
     }
 
-    public void AddHp(int hp)
+    public void AddHp(float hp)
     {
         currentHp += hp;
         SetSliderValue();

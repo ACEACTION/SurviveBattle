@@ -14,7 +14,9 @@ public class EnemyStats : ScriptableObject
 
     public float movespeed;
     public int xpAmount;
-       
+
+    public float attckToPlayerMaxCd;
+
     public ObjectPool<GameObject> lootEffectPool;
     public GameObject lootEffectPrefab;
     public ObjectPool<GameObject> enemyBloodPool;

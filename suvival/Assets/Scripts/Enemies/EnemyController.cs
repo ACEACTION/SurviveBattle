@@ -15,21 +15,31 @@ public class EnemyController : MonoBehaviour
     public Transform hitBox;
     [SerializeField] Vector3 offset;
     [SerializeField] EnemyBloodSplat enemyBloodSplat;
+    bool attckToPlayer;
+    float attckToPlayerCd;
+
     private void OnEnable()
     {
         hp = stats.hpDefault;
     }
     private void Update()
     {
-        if(hp <= 0)
+        if (attckToPlayer)
         {
-            Die();
-
+            attckToPlayerCd -= Time.deltaTime;
+            if (attckToPlayerCd <= 0)
+            {
+                PlayerController.Instance.TakeDamage(stats.damage);
+                attckToPlayerCd = stats.attckToPlayerMaxCd;
+            }
         }
+
     }
     public void ReduceHp( float damage)
     {
         hp -= damage;
+        if(hp <= 0)        
+            Die();        
     }
     public void Init(Action<GameObject> killAction)
     {
@@ -47,8 +57,6 @@ public class EnemyController : MonoBehaviour
                 stats.enemyBloodSprites[Random.Range(0, stats.enemyBloodSprites.Length)]);
         AudioSourceController.Instance.PlayEnemyBloodsSfx();
       _killAction(this.gameObject);
-
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -56,7 +64,15 @@ public class EnemyController : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             GameManager.Instance.RemoveFromList(this.gameObject);
+            attckToPlayer = true;
+        }
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {         
+            attckToPlayer = false;
         }
     }
 
