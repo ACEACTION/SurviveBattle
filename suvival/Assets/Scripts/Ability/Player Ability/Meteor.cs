@@ -38,6 +38,7 @@ public class Meteor : MonoBehaviour
         {
             MakeMeteorArea();
             isGrounded = true;
+            AudioSourceController.Instance.PlayMeteorSfx();
             ReleaseMeteor(gameObject);
         }
     }

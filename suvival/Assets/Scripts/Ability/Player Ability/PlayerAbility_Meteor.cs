@@ -74,7 +74,6 @@ public class PlayerAbility_Meteor : MonoBehaviour
         for (int i = 0; i < stats.counter; i++)
         {
             Meteor meteor = meteorPool.Get().GetComponent<Meteor>();
-            AudioSourceController.Instance.PlayMeteorSfx();
             meteor.InitMeteor(OnReleaseMeteor);
         }
     }
