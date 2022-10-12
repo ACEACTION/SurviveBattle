@@ -41,6 +41,7 @@ public class DeathPulseController : MonoBehaviour
             //dealing damage here
             var enemy = other.gameObject.GetComponent<EnemyController>();
             enemy.ReduceHp(stats.dmg);
+            AudioSourceController.Instance.PlayDeathPulseSfx();
             _killAction(this.gameObject);
         }
     }

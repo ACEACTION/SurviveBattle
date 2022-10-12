@@ -44,8 +44,9 @@ public class EnemyController : MonoBehaviour
         var deathEffect = stats.enemyBloodPool.Get();
         deathEffect.transform.position = transform.position + offset;
         deathEffect.GetComponent<EnemyBloodSplat>().Init(stats.KillDeathEffect,
-                stats.enemyBloodSprites[Random.Range(0, stats.enemyBloodSprites.Length)]);                
-        _killAction(this.gameObject);
+                stats.enemyBloodSprites[Random.Range(0, stats.enemyBloodSprites.Length)]);
+        AudioSourceController.Instance.PlayEnemyBloodsSfx();
+      _killAction(this.gameObject);
 
 
     }

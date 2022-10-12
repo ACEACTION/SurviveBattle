@@ -44,6 +44,7 @@ public class LightningController : MonoBehaviour
             {
                 var enemy = x.gameObject.GetComponent<EnemyController>();
                 enemy.ReduceHp(stats.damage);
+                AudioSourceController.Instance.PlayLightningSfx();
             }
             _destroyActivator = true;
         }

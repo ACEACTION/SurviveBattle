@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int maxXp;
     public int xp;
     public int level;
+    public bool startGame;
     public List<GameObject> enemiesList = new List<GameObject>();
     public static GameManager Instance;
 
