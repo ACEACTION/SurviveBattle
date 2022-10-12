@@ -21,7 +21,7 @@ public class EnemyBloodSplat : MonoBehaviour
         if (destroyTimer <= 0)
         {
             destroyTimer = 2f;
-            _KillAction(this.gameObject);
+            _KillAction(gameObject);
         }
         else
         {
@@ -34,10 +34,11 @@ public class EnemyBloodSplat : MonoBehaviour
         bloodImg.sprite = bloodSprite;
     }
 
-    public void Init(Action<GameObject> action, Sprite sprite)
+    public void Init(Action<GameObject> action, Sprite bloodSprite)
     {
         _KillAction = action;
-        bloodSprite = sprite;
+        bloodImg.sprite = bloodSprite;
+        this.bloodSprite = bloodSprite;
     }
 
 

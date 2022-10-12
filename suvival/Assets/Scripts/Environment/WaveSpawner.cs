@@ -11,13 +11,10 @@ public class WaveSpawner : MonoBehaviour
 
     private ObjectPool<GameObject> pool;
     [SerializeField] private bool _usedPool;
-    [SerializeField] PlayerController player;
     [SerializeField] GameObject[] enemyPrefabs;
     [SerializeField] float radius;
     [SerializeField] int enemiesAmount;
-    [SerializeField] Transform spawnPoint;
     [SerializeField] float cdBetweenSpawns;
-    [SerializeField] GameManager gameManager;
     int enemyPrefabIndex;
     private void OnEnable()
     {
@@ -42,7 +39,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (state == SpawnState.Waiting)
         {
-            if (gameManager.enemiesList.Count <= enemiesAmount)
+            if (GameManager.Instance.enemiesList.Count <= enemiesAmount)
             {
                 StartCoroutine(Spawn());
             }
@@ -63,7 +60,7 @@ public class WaveSpawner : MonoBehaviour
                 enemyPrefabIndex = 1;
                 orcCount++;
                 var enemy = _usedPool ? pool.Get() : Instantiate(enemyPrefabs[1]);
-                enemy.transform.position = player.spawnPoints[Random.Range(0, player.spawnPoints.Length)].position;
+                enemy.transform.position = PlayerController.Instance.spawnPoints[Random.Range(0, PlayerController.Instance.spawnPoints.Length)].position;
                 enemy.GetComponent<EnemyController>().Init(KillEnemy);
             }
             else
@@ -71,7 +68,8 @@ public class WaveSpawner : MonoBehaviour
                 enemyPrefabIndex = 0;
                 orcCount++;
                 var enemy = _usedPool ? pool.Get() : Instantiate(enemyPrefabs[0]);
-                enemy.transform.position = player.spawnPoints[Random.Range(0, player.spawnPoints.Length)].position;
+                enemy.transform.position = 
+                    PlayerController.Instance.spawnPoints[Random.Range(0, PlayerController.Instance.spawnPoints.Length)].position;
                 enemy.GetComponent<EnemyController>().Init(KillEnemy);
             }
 

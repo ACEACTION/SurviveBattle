@@ -490,8 +490,8 @@ GameObject:
   - component: {fileID: 5618999478077888985}
   - component: {fileID: 4979865429112613996}
   - component: {fileID: 4979865428565064759}
-  - component: {fileID: 4979865428565064758}
   - component: {fileID: 1111265430024287297}
+  - component: {fileID: 4979865428565064758}
   - component: {fileID: 1111265430024287303}
   m_Layer: 6
   m_Name: Ghost
@@ -509,8 +509,8 @@ Transform:
   m_GameObject: {fileID: 4700592049911686623}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.415, y: 2.13, z: 12.666902}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1280551342162520849}
   - {fileID: 3945397841447972859}
@@ -591,19 +591,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4979865428565064758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4700592049911686623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a53d3e60a44ad04481788a73b8a6577, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
 --- !u!54 &1111265430024287297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -620,6 +607,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4979865428565064758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4700592049911686623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a53d3e60a44ad04481788a73b8a6577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: 878c0c2e6149d1e49a34803e51f40226, type: 2}
 --- !u!114 &1111265430024287303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,11 +633,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 20
-  stats: {fileID: 11400000, guid: a3c6d1725079da64590e363bca52c7a1, type: 2}
+  stats: {fileID: 11400000, guid: 878c0c2e6149d1e49a34803e51f40226, type: 2}
   hitBox: {fileID: 7850474583711959533}
   offset: {x: 0, y: 0, z: 0}
-  enemyBloodSplat: {fileID: 517822681299204160, guid: 6b81dc8af1488a04e913e437e571a7d1,
-    type: 3}
+  enemyBloodSplat: {fileID: 517822681299204160, guid: 6b81dc8af1488a04e913e437e571a7d1, type: 3}
 --- !u!1 &5147239379119065771
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
         instance = this;
     }
     public Collider[] enemies;
-    public EnemyController closestEnemy;
+    [HideInInspector]public EnemyController closestEnemy;
     public ProjectileStats stats;
     public float xp;
     float attackCd;

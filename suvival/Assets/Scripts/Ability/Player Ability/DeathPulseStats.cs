@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-[CreateAssetMenu(menuName = "DeathPulseStats")]
+[CreateAssetMenu(menuName = "Stats/DeathPulseStats")]
 public class DeathPulseStats : ScriptableObject
 {
     public float DeathPulseMoveSpeed;

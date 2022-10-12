@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
-[CreateAssetMenu(menuName = "EnemyStats")]
+[CreateAssetMenu(menuName = "Stats/EnemyStats")]
 public class EnemyStats : ScriptableObject
 {
     public float hp;
@@ -42,7 +42,7 @@ public class EnemyStats : ScriptableObject
         }, false, 10, 20);
 
 
-        //death effect
+        //blood effect
         enemyBloodPool = new ObjectPool<GameObject>(() =>
         {
             return Instantiate(enemyBloodPrefab);

@@ -57,9 +57,12 @@ public class PlayerAbility_Lightning : MonoBehaviour
 
         if (enemies.Length <= 0) return;
 
-        var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
-        lightning.transform.position = chosenEnemy.transform.position + offset;
-        lightning.GetComponent<LightningController>().Init(KillProjectile, stats.radius);
+        for (int i = 0; i < stats.count; i++)
+        {
+            var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
+            lightning.transform.position = chosenEnemy.transform.position + offset;
+            lightning.GetComponent<LightningController>().Init(KillProjectile, stats.radius);
+        }
     }
 
     private void KillProjectile(GameObject obj)

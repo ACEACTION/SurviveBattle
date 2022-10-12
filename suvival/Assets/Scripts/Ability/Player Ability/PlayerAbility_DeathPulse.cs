@@ -13,7 +13,6 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
     [SerializeField] GameObject deathPulsePrefab;
     [SerializeField] DpStats stats;
     [SerializeField] float radius;
-    [SerializeField] Transform spawnPoint;
     [SerializeField] bool _usedPool;
     [SerializeField] bool abilityIsActive;
 
@@ -65,7 +64,7 @@ public class PlayerAbility_DeathPulse : MonoBehaviour
 
             var chosenEnemy = enemies[Random.Range(0, enemies.Length)];
             var deathpulse = pool.Get();
-            deathpulse.transform.position = spawnPoint.transform.position;
+            deathpulse.transform.position = transform.position;
             deathpulse.GetComponent<DeathPulseController>().destination = chosenEnemy.transform;
             deathpulse.GetComponent<DeathPulseController>().Init(KillDeathPulse);
         }
