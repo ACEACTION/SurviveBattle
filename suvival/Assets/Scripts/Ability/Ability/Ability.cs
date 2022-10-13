@@ -31,6 +31,6 @@ public class Ability : ScriptableObject
         abilityLevel = 0;
         abilityIsDeactive = false;
     }
-
+    
 }
 

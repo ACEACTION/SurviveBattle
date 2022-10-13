@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AbilityUIManager : MonoBehaviour
 {
-    [SerializeField] List<Ability> abilities;
+   [SerializeField] List<Ability> abilities;
    public List<Ability> abilitiesList = new List<Ability>();
-    [SerializeField] AbilityPanel abilityPanel;
+   [SerializeField] AbilityPanel abilityPanel;
    public Ability[] findedAbilitiesList = new Ability[3];
-    int findedListIndex = 0;
+   int findedListIndex = 0;
 
     public static AbilityUIManager Instance;
     private void Awake()
@@ -42,18 +42,13 @@ public class AbilityUIManager : MonoBehaviour
     {
         SetAbilitiesItemList();
 
-        while (findedListIndex < 3)
+        for (int i = 0; i < 3; i++)
         {
             Ability ability = abilitiesList[Random.Range(0, abilitiesList.Count)];
-            if (!ability.abilityIsDeactive)
-            {
-                findedAbilitiesList[findedListIndex] = ability;
-                abilitiesList.Remove(ability);
-                findedListIndex++;
-            }
+            findedAbilitiesList[i] = ability;
+            abilitiesList.Remove(ability);            
         }
-
-        findedListIndex = 0;
+        
         return findedAbilitiesList;
     }
 
@@ -63,7 +58,8 @@ public class AbilityUIManager : MonoBehaviour
         abilitiesList.Clear();
         for (int i = 0; i < abilities.Count; i++)
         {
-            abilitiesList.Add(abilities[i]);
+            if (!abilities[i].abilityIsDeactive)
+                abilitiesList.Add(abilities[i]);
         }
     }
 

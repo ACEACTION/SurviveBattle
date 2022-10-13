@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public int maxXp;
     public int xp;
-    public int level;
+    public int level = 1;
     public bool startGame;
     public List<GameObject> enemiesList = new List<GameObject>();
     public static GameManager Instance;
@@ -53,8 +53,12 @@ public class GameManager : MonoBehaviour
             XpSlider.Instance.SetLevelTxt();
             XpSlider.Instance.ResetSlider();
             SetMaxXp();
-            AbilityUIManager.Instance.OpenAbilityPanel();
-            PlayerController.Instance.PlayLevelUpEffect();
+
+            if (level <= 30)
+            {
+                AbilityUIManager.Instance.OpenAbilityPanel();
+                PlayerController.Instance.PlayLevelUpEffect();
+            }
         }
     }
 
@@ -102,6 +106,7 @@ public class GameManager : MonoBehaviour
     {
         orcStats.ResetStats();
         ghostStats.ResetStats();
+       
     }
 
 }

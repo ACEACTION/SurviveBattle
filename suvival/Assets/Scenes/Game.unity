@@ -679,14 +679,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6850825929084484885, guid: 5be30d3797859de4f85ba40d64c69683, type: 3}
-      propertyPath: orcStats
-      value: 
-      objectReference: {fileID: 11400000, guid: c915cc508ad608c498d769b3f805f523, type: 2}
-    - target: {fileID: 6850825929084484885, guid: 5be30d3797859de4f85ba40d64c69683, type: 3}
-      propertyPath: ghostStats
-      value: 
-      objectReference: {fileID: 11400000, guid: 878c0c2e6149d1e49a34803e51f40226, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5be30d3797859de4f85ba40d64c69683, type: 3}
 --- !u!1001 &7724569976284694436
