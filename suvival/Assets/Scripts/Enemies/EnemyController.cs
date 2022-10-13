@@ -6,6 +6,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,18 +14,23 @@ public class EnemyController : MonoBehaviour
     public float hp;
     public EnemyStats stats;
     public Transform hitBox;
-    [SerializeField] Vector3 offset;
+    
     [SerializeField] EnemyBloodSplat enemyBloodSplat;
     bool attckToPlayer;
     float attckToPlayerCd;
+    [SerializeField] NavMeshAgent agent;
 
     private void OnEnable()
     {
-        hp = stats.hpDefault;
+        hp = 0;
+        hp += stats.hp;
     }
+
     private void Update()
     {
-        if (attckToPlayer)
+        if (hp <= 0)
+            Die();
+        if (Vector3.Distance(PlayerController.Instance.transform.position, transform.position) <= agent.stoppingDistance)
         {
             attckToPlayerCd -= Time.deltaTime;
             if (attckToPlayerCd <= 0)
@@ -38,8 +44,7 @@ public class EnemyController : MonoBehaviour
     public void ReduceHp( float damage)
     {
         hp -= damage;
-        if(hp <= 0)        
-            Die();
+
     }
     public void Init(Action<GameObject> killAction)
     {
@@ -48,33 +53,17 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         var lootEffect = stats.lootEffectPool.Get();
-        lootEffect.transform.position = transform.position + offset;
+        lootEffect.transform.position = transform.position + stats.lootOffset;
         lootEffect.GetComponent<EnemyXpLoot>().Init(stats.KillLootEffect);
 
         var deathEffect = stats.enemyBloodPool.Get();
-        deathEffect.transform.position = transform.position + offset;
+        deathEffect.transform.position = transform.position + stats.bloodSplatOffset;
         deathEffect.GetComponent<EnemyBloodSplat>().Init(stats.KillDeathEffect,
                 stats.enemyBloodSprites[Random.Range(0, stats.enemyBloodSprites.Length)]);
 
         AudioSourceController.Instance.PlayEnemyBloodsSfx();
-      _killAction(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform.CompareTag("Player"))
-        {
-            GameManager.Instance.RemoveFromList(this.gameObject);
-            attckToPlayer = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.transform.CompareTag("Player"))
-        {         
-            attckToPlayer = false;
-        }
-    }
+        GameManager.Instance.RemoveFromList(this.gameObject);
+        _killAction(gameObject);
+    }    
 
 }

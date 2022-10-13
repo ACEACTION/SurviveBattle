@@ -830,6 +830,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 19e7edbb863a530499a7a5e1f3b428c6, type: 2}
   - {fileID: 11400000, guid: 387c84d638c8dae498c4ac3bb397dc59, type: 2}
   - {fileID: 11400000, guid: 811fe0c611961924993e2916a3da93a3, type: 2}
+  - {fileID: 11400000, guid: 893bb0f81194e134991d449e2dd0d64b, type: 2}
+  - {fileID: 11400000, guid: 2201f9ec667a2534e89f9fddd2cd3738, type: 2}
   abilityPanel: {fileID: 167171983616255148}
 --- !u!1 &5938517008428012811
 GameObject:

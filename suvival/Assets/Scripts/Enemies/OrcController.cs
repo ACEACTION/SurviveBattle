@@ -8,7 +8,6 @@ public class OrcController : MonoBehaviour
 {
     Animator anim;
     [SerializeField] PlayerController player;
-    [SerializeField] EnemyStats enemyStats;
     [SerializeField] GameManager gameManager;
     [SerializeField] float damage;
 
@@ -23,8 +22,6 @@ public class OrcController : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = enemyStats.movespeed;
-
     }
 
     private void Update()
@@ -44,7 +41,6 @@ public class OrcController : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             //anim.SetBool("Attacking", true);
-            gameManager.RemoveFromList(this.gameObject);
 
             _killAction(this.gameObject);
         }

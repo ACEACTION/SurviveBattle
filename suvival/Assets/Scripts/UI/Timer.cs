@@ -7,8 +7,8 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     // params
-    [SerializeField] float levelTime = 0;
-    TimeSpan timeSpan;
+    public float levelTime = 0;
+    public TimeSpan timeSpan;
     public bool activeTimer;
 
     // references
@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
             timeSpan = TimeSpan.FromSeconds(levelTime);
             timerText.text = String.Concat(timeSpan.Minutes,
                 ":", timeSpan.Seconds);
-
+            
             if (levelTime <= 0)
             {
                 levelTime = 0;

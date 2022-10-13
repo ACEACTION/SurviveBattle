@@ -7,7 +7,10 @@ using Random = UnityEngine.Random;
 
 public class PlayerAbility_Meteor : MonoBehaviour
 {
-    [SerializeField] float randomOffsetScale;
+    [SerializeField] float minRandomOffset;
+    [SerializeField] float maxRandomOffset;
+
+
     [SerializeField] GameObject meteorPrefab;
     public ObjectPool<GameObject> meteorPool;
     bool activeAbility;
@@ -80,11 +83,21 @@ public class PlayerAbility_Meteor : MonoBehaviour
 
     Vector3 GetRandomPos()
     {
-        return new Vector3(Random.Range(transform.position.x - randomOffsetScale, 
-                                transform.position.x + randomOffsetScale),
-                           transform.position.y + 30,
-                           Random.Range(transform.position.z - randomOffsetScale, 
-                            transform.position.z + randomOffsetScale));
+        float x1 = Random.Range(transform.position.x - maxRandomOffset, transform.position.x - minRandomOffset);
+                   
+        float x2 = Random.Range(transform.position.x + minRandomOffset, transform.position.x + maxRandomOffset);
+        float x = 0;
+        if (Random.Range(0, 2) == 0) x = x1;
+        else x = x2;
+
+
+        float z1 = Random.Range(transform.position.z - maxRandomOffset, transform.position.z - maxRandomOffset);
+        float z2 = Random.Range(transform.position.z + minRandomOffset, transform.position.z + maxRandomOffset);
+        float z = 0;
+        if (Random.Range(0, 2) == 0) z = z1;
+        else z = z2;
+
+        return new Vector3(x, transform.position.y + 50, z);        
     }
 
     void DoActiveAbility()

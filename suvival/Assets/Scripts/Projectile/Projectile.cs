@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     public ProjectileStats stats;
     [SerializeField] private bool _usedPool;
     [SerializeField] float destroyTimerCd;
-    [SerializeField] float destroyTimerCdAmount;
+    
     private Action<Projectile> _killAction;
 
     [SerializeField] GameObject hitEffect;
@@ -31,7 +31,13 @@ public class Projectile : MonoBehaviour
         {
             Destroy(hitEffect.gameObject);
         }, false, 10, 20);
-        destroyTimerCd = destroyTimerCdAmount;
+        destroyTimerCd = stats.projectileDestroyTime;
+    }
+
+    private void OnEnable()
+    {
+        destroyTimerCd = stats.projectileDestroyTime;
+
     }
 
     private void Update()
@@ -39,7 +45,7 @@ public class Projectile : MonoBehaviour
         transform.position += direction * stats.projecMoveSpeed * Time.deltaTime;
         if (destroyTimerCd <= 0)
         {
-            destroyTimerCd = destroyTimerCdAmount;
+            destroyTimerCd = stats.projectileDestroyTime;
             _killAction(this);
         }
         else
@@ -58,10 +64,11 @@ public class Projectile : MonoBehaviour
         if (col.transform.CompareTag("Enemy"))
         {
             var enemy = col.gameObject.GetComponent<EnemyController>();
-            enemy?.ReduceHp(stats.damage);
 
             var hiteffect = _usedPool ? pool.Get() : Instantiate(hitEffect);
             hiteffect.transform.position = col.transform.position;
+            enemy?.ReduceHp(stats.damage);
+
             hiteffect.GetComponent<ProjectileHitEffect>().Init(KillEffect);
             _killAction(this);
         }

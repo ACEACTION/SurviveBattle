@@ -7,14 +7,12 @@ public class LightningController : MonoBehaviour
 {
     private Action<GameObject> _killAction;
     [SerializeField] LightninStats stats;
-    [SerializeField] float radius;
     [SerializeField] float destroyCd;
     [SerializeField] bool _destroyActivator;
     [SerializeField] LayerMask enemyLayerMask;
-    public void Init(Action<GameObject> killAction, float radius)
+    public void Init(Action<GameObject> killAction)
     {
-        _killAction = killAction;
-        this.radius = radius;
+        _killAction = killAction;        
     }
 
     void Update()
@@ -38,7 +36,7 @@ public class LightningController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
 
-            var enemies = Physics.OverlapSphere(transform.position, radius/10, enemyLayerMask);
+            var enemies = Physics.OverlapSphere(transform.position, stats.aoeRadius, enemyLayerMask);
 
             foreach (var x in enemies)
             {
@@ -49,4 +47,6 @@ public class LightningController : MonoBehaviour
             _destroyActivator = true;
         }
     }
+
+
 }

@@ -17,10 +17,12 @@ public class ProjectileStats : ScriptableObject
     public bool sidedArrows;
     public bool diagonalArrows;
 
+    public float projectileDestroyTime;
     public  void ResetStats()
     {
         damage = damageDefault;
         projecMoveSpeed = projecMoveSpeedDefault;
+        attackCdAmount = defaultAttackCdAmount;
         sidedArrows = false;
         diagonalArrows = false;
     }

@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1923259786}
   smoothFactor: 0.102
-  offset: {x: 0, y: 33.9, z: -27}
+  offset: {x: 0, y: 60.1, z: -53.8}
   lookAtPlayer: 0
 --- !u!1 &410087039
 GameObject:

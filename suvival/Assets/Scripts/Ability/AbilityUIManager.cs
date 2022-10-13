@@ -5,9 +5,9 @@ using UnityEngine;
 public class AbilityUIManager : MonoBehaviour
 {
     [SerializeField] List<Ability> abilities;
-    List<Ability> abilitiesList = new List<Ability>();
+   public List<Ability> abilitiesList = new List<Ability>();
     [SerializeField] AbilityPanel abilityPanel;
-    Ability[] findedAbilitiesList = new Ability[3];
+   public Ability[] findedAbilitiesList = new Ability[3];
     int findedListIndex = 0;
 
     public static AbilityUIManager Instance;
@@ -53,6 +53,7 @@ public class AbilityUIManager : MonoBehaviour
             }
         }
 
+        findedListIndex = 0;
         return findedAbilitiesList;
     }
 

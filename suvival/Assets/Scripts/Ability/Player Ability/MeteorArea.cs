@@ -7,6 +7,8 @@ public class MeteorArea : MonoBehaviour
 {
     Action<GameObject> ReleaseMeteorArea;
     float dmg;
+    [SerializeField] SphereCollider collider;
+    [SerializeField] LayerMask enemyLayerMask;
     IEnumerator Start()
     {
         yield return new WaitForSeconds(2f);
@@ -24,7 +26,13 @@ public class MeteorArea : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyController>()?.ReduceHp(dmg);
+            var enemies = Physics.OverlapSphere(transform.position, collider.radius, enemyLayerMask);
+
+            foreach (var x in enemies)
+            {
+                var enemy = x.gameObject.GetComponent<EnemyController>();
+                enemy.ReduceHp(dmg);
+            }
         }
     }
 

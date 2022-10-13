@@ -9727,7 +9727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9496ba9bc33af447ac4eadbbc72f2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 2e08a3a3bb405d44cbc941f6823d14ba, type: 2}
+  stats: {fileID: 11400000, guid: ab75f65f09c626c4d8a53095ecc367b4, type: 2}
   radius: 0.5
   destroyCd: 1
   _destroyActivator: 0

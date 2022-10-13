@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2689934872273901056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2689934872273901062}
+  - component: {fileID: 2689934872273901057}
+  - component: {fileID: 703048389}
+  m_Layer: 0
+  m_Name: Wave Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2689934872273901062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689934872273901056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2689934872273901057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689934872273901056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3341b20d9dad83c4ca77a7ce866f55db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+  orcCount: 1
+  enemyMultiplier: {fileID: 703048389}
+  _usedPool: 1
+  enemyPrefabs:
+  - {fileID: 4700592049911686623, guid: 20be8438987beb246a084356542b96b2, type: 3}
+  - {fileID: 3219090539091412514, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
+  radius: 100
+  enemiesAmount: 100
+--- !u!114 &703048389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689934872273901056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6795b0677a1b62442bcd3300ff4ec7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpMultiplier: 10
+  hpMultiplierFactor: 1
+  cdBetweenSpawnsMultiplier: 0.6
+  cdBetweenSpawnsMultiplierFactor: 0.05
+  timer: {fileID: 0}

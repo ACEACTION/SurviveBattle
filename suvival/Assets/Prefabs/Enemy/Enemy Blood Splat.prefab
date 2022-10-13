@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8679245, g: 0.25710213, b: 0.25710213, a: 1}
+  m_Color: {r: 0.2588235, g: 0.8666667, b: 0.32005152, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -105,7 +105,7 @@ RectTransform:
   m_GameObject: {fileID: 7795225516527883789}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 20.3}
-  m_LocalScale: {x: 3.2612174, y: 3.2612174, z: 3.2612174}
+  m_LocalScale: {x: 7.1815267, y: 7.1815267, z: 7.1815267}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7795225514760766196}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7795225516527883788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,4 +191,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodImg: {fileID: 7795225514760766199}
-  destroyTimer: 2
+  destroyTimer: 5

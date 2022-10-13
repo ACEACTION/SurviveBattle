@@ -8,13 +8,13 @@ public class WaveSpawner : MonoBehaviour
     public enum SpawnState { Spawnign, Waiting };
     public SpawnState state = SpawnState.Waiting;
     [SerializeField] int orcCount = 1;
+    [SerializeField] EnemyMultiplier enemyMultiplier;
 
     private ObjectPool<GameObject> pool;
     [SerializeField] private bool _usedPool;
     [SerializeField] GameObject[] enemyPrefabs;
     [SerializeField] float radius;
     [SerializeField] int enemiesAmount;
-    [SerializeField] float cdBetweenSpawns;
     int enemyPrefabIndex;
     private void OnEnable()
     {
@@ -43,23 +43,20 @@ public class WaveSpawner : MonoBehaviour
             {
                 StartCoroutine(Spawn());
             }
-
         }
-
     }
-
-
 
     IEnumerator Spawn()
     {
         state = SpawnState.Spawnign;
 
-            yield return new WaitForSeconds(cdBetweenSpawns);
+            yield return new WaitForSeconds(enemyMultiplier.cdBetweenSpawnsMultiplier);
             if(orcCount % 10 == 0)
             {
                 enemyPrefabIndex = 1;
                 orcCount++;
                 var enemy = _usedPool ? pool.Get() : Instantiate(enemyPrefabs[1]);
+                enemy.GetComponent<EnemyController>().stats.hp = enemyMultiplier.GetHpMultiplier();
                 enemy.transform.position = PlayerController.Instance.spawnPoints[Random.Range(0, PlayerController.Instance.spawnPoints.Length)].position;
                 enemy.GetComponent<EnemyController>().Init(KillEnemy);
             }
@@ -68,12 +65,11 @@ public class WaveSpawner : MonoBehaviour
                 enemyPrefabIndex = 0;
                 orcCount++;
                 var enemy = _usedPool ? pool.Get() : Instantiate(enemyPrefabs[0]);
+                enemy.GetComponent<EnemyController>().stats.hp = enemyMultiplier.GetHpMultiplier();
                 enemy.transform.position = 
                     PlayerController.Instance.spawnPoints[Random.Range(0, PlayerController.Instance.spawnPoints.Length)].position;
                 enemy.GetComponent<EnemyController>().Init(KillEnemy);
-            }
-
-
+        }
 
         state = SpawnState.Waiting;
 

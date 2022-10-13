@@ -12,17 +12,18 @@ public class EnemyStats : ScriptableObject
     public float damage;
     public float damageDefault;
 
-    public float movespeed;
     public int xpAmount;
 
     public float attckToPlayerMaxCd;
+
+    public Vector3 lootOffset;
 
     public ObjectPool<GameObject> lootEffectPool;
     public GameObject lootEffectPrefab;
     public ObjectPool<GameObject> enemyBloodPool;
     public Sprite[] enemyBloodSprites;
     public GameObject enemyBloodPrefab;
-
+    public Vector3 bloodSplatOffset;
 
     private void OnEnable()
     {
@@ -57,8 +58,7 @@ public class EnemyStats : ScriptableObject
             Destroy(deathEffect.gameObject);
         }, false, 10, 20);
 
-    }
-
+    }    
 
     public void KillLootEffect(GameObject obj)
     {
@@ -70,6 +70,10 @@ public class EnemyStats : ScriptableObject
         enemyBloodPool.Release(obj);
     }
 
+    public void ResetStats()
+    {
+        hp = hpDefault;
+    }
 
 
 }

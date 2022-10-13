@@ -5,11 +5,6 @@ using UnityEngine;
 using UnityEngine.AI;
 public class GhostController : MonoBehaviour
 {
-
-
-    [SerializeField] EnemyStats enemyStats;
-
-
     NavMeshAgent agent;
 
     private void Start()
@@ -17,8 +12,6 @@ public class GhostController : MonoBehaviour
         GameManager.Instance.AddToList(this.gameObject);
 
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = enemyStats.movespeed;
-        
     }
 
     private void Update()

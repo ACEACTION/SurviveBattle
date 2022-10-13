@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Stats/LightninStats")]
 public class LightninStats : ScriptableObject
 {
-    public float radius = 50f;
-    public float radiusDefault = 50f;
+    public float aoeRadius = 50f;
+    public float aoeRadiusDefault = 50f;
 
     public int count;
     public int countDefault;
@@ -21,7 +21,7 @@ public class LightninStats : ScriptableObject
 
     public void ResetStats()
     {
-        radius = radiusDefault;
+        aoeRadius = aoeRadiusDefault;
         count = countDefault;
         damage = damageDefault;
         maxCd = maxCdDefault;
@@ -38,7 +38,7 @@ public class LightninStats : ScriptableObject
     }
 
     public void AddRadius(float r) {
-        radius += r;
+        aoeRadius += r;
     }
 
     public void MinusMaxCd(float c)

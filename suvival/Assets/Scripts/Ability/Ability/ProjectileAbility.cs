@@ -21,13 +21,13 @@ public class ProjectileAbility : Ability
 {
     [SerializeField] ProjectileStats stats;
     [SerializeField] int adLevel1;
-    [SerializeField] int asLevel2;    
+    [SerializeField] float asLevel2;    
     [SerializeField] int projecMoveSpeedLevel4;
-    [SerializeField] int asLevel5;    
+    [SerializeField] float asLevel5;    
     [SerializeField] int adLevel7;
     [SerializeField] int projecMoveSpeedLevel8;
     [SerializeField] int adLevel9;
-    [SerializeField] int asLevel10;
+    [SerializeField] float asLevel10;
 
     public override void ResetAbility()
     {

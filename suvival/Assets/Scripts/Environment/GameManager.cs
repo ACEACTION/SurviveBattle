@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,10 @@ public class GameManager : MonoBehaviour
     public bool startGame;
     public List<GameObject> enemiesList = new List<GameObject>();
     public static GameManager Instance;
+
+    [SerializeField] EnemyStats orcStats;
+    [SerializeField] EnemyStats ghostStats;
+
 
     private void Awake()
     {
@@ -92,6 +95,13 @@ public class GameManager : MonoBehaviour
         }
         
         XpSlider.Instance.SetSliderMaxValue();
+    }
+
+
+    private void OnDisable()
+    {
+        orcStats.ResetStats();
+        ghostStats.ResetStats();
     }
 
 }
