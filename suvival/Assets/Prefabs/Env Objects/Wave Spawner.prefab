@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 4700592049911686623, guid: 20be8438987beb246a084356542b96b2, type: 3}
   - {fileID: 3219090539091412514, guid: 4a664ace8475a3f44a66579b08b81ee2, type: 3}
   radius: 100
-  enemiesAmount: 100
+  enemiesAmount: 75
 --- !u!114 &703048389
 MonoBehaviour:
   m_ObjectHideFlags: 0

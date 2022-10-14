@@ -30,16 +30,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void RotatePlayerFace()
     {
-        if (movementDir != Vector3.zero)
+        if (PlayerIsMoving())
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementDir), Time.deltaTime * rotateSpeed);
     }
 
     void SetAnimationMove()
     {
-        if (movementDir != Vector3.zero)
+        if (PlayerIsMoving())
+        {
             anim.SetBool("Running", true);
+            anim.SetBool("Attacking", false);
+        }
         else
             anim.SetBool("Running", false);
     }
 
+    public bool PlayerIsMoving()
+    {
+        return movementDir != Vector3.zero;
+    }
 }

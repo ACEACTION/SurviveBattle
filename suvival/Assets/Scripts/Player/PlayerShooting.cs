@@ -12,6 +12,8 @@ public class PlayerShooting : MonoBehaviour
         if(instance == null)
         instance = this;
     }
+
+    [SerializeField] PlayerMovement playerMovement;
     public Collider[] enemies;
     [HideInInspector]public EnemyController closestEnemy;
     public ProjectileStats stats;
@@ -98,8 +100,20 @@ public class PlayerShooting : MonoBehaviour
             return;
         }
 
-        anim.SetBool("Attacking", true);
-        anim.SetLayerWeight(1, .5f);
+        
+        if (playerMovement.PlayerIsMoving())
+        {
+            anim.SetBool("AttackingRun", true);
+            anim.SetLayerWeight(1, .5f);
+        }
+        else
+        {
+            anim.SetBool("AttackingRun", false);
+            anim.SetBool("Attacking", true);
+            anim.SetLayerWeight(1, 0);
+        }
+
+
         var projectile = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         
         projectile.transform.position = bulletSpawnPoint.position;

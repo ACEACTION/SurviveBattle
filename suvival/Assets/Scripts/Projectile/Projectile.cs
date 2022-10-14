@@ -67,11 +67,11 @@ public class Projectile : MonoBehaviour
         {
             var enemy = col.gameObject.GetComponent<EnemyController>();
 
-            var hiteffect = _usedPool ? pool.Get() : Instantiate(hitEffect);
-            hiteffect.transform.position = col.transform.position;
-            enemy?.ReduceHp(stats.damage);
+            //var hiteffect = _usedPool ? pool.Get() : Instantiate(hitEffect);
+            //hiteffect.transform.position = col.transform.position;
 
-            hiteffect.GetComponent<ProjectileHitEffect>().Init(KillEffect);
+            //hiteffect.GetComponent<ProjectileHitEffect>().Init(KillEffect);
+            enemy?.ReduceHp(stats.damage);
             _killAction(this);
         }
 

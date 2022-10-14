@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 23908
+  controlID: 26451
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 23883
+  controlID: 26452
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 23884
+  controlID: 26453
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 327.2
     height: 487.2
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e4690000
+      m_SelectedIDs: b2690000
       m_LastClickedID: 0
       m_ExpandedIDs: 3299fdff08ccfdfffef7ffff08f8ffff2ef8ffffb2f9ffff0afaffff34fbffff4869000044d40000f4d400001cd5000000d6000050d60000
       m_RenameOverlay:
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -16.216362, y: -8.369379, z: -4.391432}
+    m_Target: {x: -12.010811, y: 27.300034, z: -31.013498}
     speed: 2
-    m_Value: {x: -16.216362, y: -8.369379, z: -4.391432}
+    m_Value: {x: -12.010811, y: 27.300034, z: -31.013498}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -556,9 +556,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.07613709, y: 0.88327456, z: -0.15417616, w: -0.43618697}
   m_Size:
-    m_Target: 56.624893
+    m_Target: 177.8406
     speed: 2
-    m_Value: 56.624893
+    m_Value: 177.8406
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -683,9 +683,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 7a57b80e5bc3c6d44866470ec0cc13d5, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: c78c5134be591f7488db7b80d78be5fc, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 6304951043958428158, guid: 7a57b80e5bc3c6d44866470ec0cc13d5, type: 2}
+  - m_Target: {fileID: -1664070420841244864, guid: c78c5134be591f7488db7b80d78be5fc, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -793,21 +793,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Enemy
+    - Assets/Prefabs/Player
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Enemy
+  - Assets/Prefabs/Player
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\digi max\UnityProjects\SurviveBattle\suvival
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 237.40002}
-    m_SelectedIDs: b8a10000
-    m_LastClickedID: 41400
+    scrollPos: {x: 0, y: 349.40002}
+    m_SelectedIDs: bea10000
+    m_LastClickedID: 41406
     m_ExpandedIDs: 00000000a4770000a6770000a8770000aa770000ac770000ae770000f477000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -861,8 +861,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e4690000
-    m_LastClickedInstanceID: 27108
+    m_SelectedInstanceIDs: b2690000
+    m_LastClickedInstanceID: 27058
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300009a7a000000000000227d0000bc7d0000987d0000509900004ee60000f86401008c750000
     m_RenameOverlay:
@@ -970,8 +970,8 @@ MonoBehaviour:
     y: 0
     width: 356
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}

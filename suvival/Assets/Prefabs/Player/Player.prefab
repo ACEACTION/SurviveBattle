@@ -632,6 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bff1bf32672de40b473af666fa20f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 7724569978140777007}
   enemies: []
   closestEnemy: {fileID: 0}
   stats: {fileID: 11400000, guid: a764761c1a70f554c9609887dde610be, type: 2}
