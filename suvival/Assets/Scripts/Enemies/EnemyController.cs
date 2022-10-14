@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
     {
         if (PlayerController.Instance.playerIsDead) return;
 
-        if (Vector3.Distance(PlayerController.Instance.transform.position, transform.position) <= agent.stoppingDistance)
+        if (DistanceToPlayer() <= agent.stoppingDistance)
         {
             attckToPlayerCd -= Time.deltaTime;
             if (attckToPlayerCd <= 0)
@@ -40,7 +40,18 @@ public class EnemyController : MonoBehaviour
             }
         }
 
+        if(DistanceToPlayer() >= stats.maxDistToPlayer)
+        {
+            _killAction(this.gameObject);
+        }
+
     }
+
+    private float DistanceToPlayer()
+    {
+        return Vector3.Distance(PlayerController.Instance.transform.position, transform.position);
+    }
+
     public void ReduceHp( float damage)
     {
         hp -= damage;

@@ -27,6 +27,12 @@ public class DeathPulseController : MonoBehaviour
         {
             agent.SetDestination(destination.position);
         }
+        destroyTimer -= Time.deltaTime;
+
+        if(destroyTimer <= 0)
+        {
+            _killAction(this.gameObject);
+        }
        
     }
 

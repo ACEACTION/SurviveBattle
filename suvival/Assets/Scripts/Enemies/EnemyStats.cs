@@ -15,7 +15,7 @@ public class EnemyStats : ScriptableObject
     public int xpAmount;
 
     public float attckToPlayerMaxCd;
-
+    public float maxDistToPlayer;
     public Vector3 lootOffset;
 
     public ObjectPool<GameObject> lootEffectPool;

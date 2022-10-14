@@ -38901,7 +38901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d943d5930431a5149a7f1f5a71e04abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTimer: 2
+  destroyTimer: 5
   dpStats: {fileID: 11400000, guid: bfe971e3715e1114192db37a8e614cf2, type: 2}
   stats: {fileID: 11400000, guid: bba17738943885344906d57dd5b0b73d, type: 2}
   offset: {x: 0, y: 1.74, z: 0}
@@ -38916,7 +38916,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 50
   m_Acceleration: 1200
   avoidancePriority: 50
   m_AngularSpeed: 120
