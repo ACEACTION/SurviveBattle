@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //variables
-    [SerializeField] float hp;
+    [SerializeField] float playerHp;
     public Transform[] spawnPoints;
+    public bool playerIsDead = false;
 
     // player level up
     [SerializeField] ParticleSystem levelUpEffect;
@@ -17,14 +18,16 @@ public class PlayerController : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
+        healthbar.SetHp(playerHp);
         levelUpEffect.Stop();
+
     }
 
     public void TakeDamage(float damage)
     {
-        hp -= damage;
+        playerHp -= damage;
         healthbar.MinusHp(damage);
-        if(hp <= 0)
+        if(playerHp <= 0)
         {
             Died();
         }        
@@ -32,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
     void Died()
     {
+        playerIsDead = true;
+        WinLosePanel.Instance.LoseProcess();
+        AudioSourceController.Instance.PlayLoseSfx();
         Destroy(this.gameObject);
     }
 

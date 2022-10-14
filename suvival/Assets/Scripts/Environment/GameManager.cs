@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public bool startGame;
     public List<GameObject> enemiesList = new List<GameObject>();
     public static GameManager Instance;
-
     [SerializeField] EnemyStats orcStats;
     [SerializeField] EnemyStats ghostStats;
 
@@ -106,7 +105,6 @@ public class GameManager : MonoBehaviour
     {
         orcStats.ResetStats();
         ghostStats.ResetStats();
-       
     }
 
 }

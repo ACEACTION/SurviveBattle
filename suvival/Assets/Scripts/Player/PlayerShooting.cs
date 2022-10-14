@@ -103,8 +103,11 @@ public class PlayerShooting : MonoBehaviour
         var projectile = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         
         projectile.transform.position = bulletSpawnPoint.position;
-        projectile.direction = closestEnemy.hitBox.transform.position - bulletSpawnPoint.transform.position;
+        projectile.direction = (closestEnemy.hitBox.transform.position - bulletSpawnPoint.transform.position).normalized;
         projectile.direction.y = 0;
+        projectile.transform.LookAt(closestEnemy.transform);
+        projectile.transform.Rotate(0, +90f, 0);
+
         projectile.Init(KillProjectile);
 
         //sided and diagonal arrows here
@@ -120,6 +123,8 @@ public class PlayerShooting : MonoBehaviour
         projLeft.transform.position = bulletSpawnPoint.position;
 
         projLeft.direction = Quaternion.AngleAxis(-75, Vector3.up * 10) * projectile.direction;
+        projLeft.transform.rotation = projectile.transform.rotation;
+        projLeft.transform.Rotate(0, -75, 0);
 
         projLeft.Init(KillProjectile);
 
@@ -128,7 +133,8 @@ public class PlayerShooting : MonoBehaviour
         projRight.transform.position = bulletSpawnPoint.position;
 
         projRight.direction = Quaternion.AngleAxis(75, Vector3.up * 10) * projectile.direction;
-
+        projRight.transform.rotation = projectile.transform.rotation;
+        projRight.transform.Rotate(0, +75, 0);
         projRight.Init(KillProjectile);
     }
 
@@ -139,6 +145,8 @@ public class PlayerShooting : MonoBehaviour
         projLeft.transform.position = bulletSpawnPoint.position;
         
         projLeft.direction = Quaternion.AngleAxis(-25, Vector3.up * 10) * projectile.direction;
+        projLeft.transform.rotation = projectile.transform.rotation;
+        projLeft.transform.Rotate(0, -25, 0);
 
         projLeft.Init(KillProjectile);
 
@@ -146,7 +154,8 @@ public class PlayerShooting : MonoBehaviour
         var projRight = _usedPool ? pool.Get() : Instantiate(projectilePrefab);
         projRight.transform.position = bulletSpawnPoint.position;
         projRight.direction = Quaternion.AngleAxis(25, Vector3.up * 10) * projectile.direction; ;
-
+        projRight.transform.rotation = projectile.transform.rotation;
+        projRight.transform.Rotate(0, +25, 0);
         projRight.Init(KillProjectile);
 
     }

@@ -28,8 +28,8 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (hp <= 0)
-            Die();
+        if (PlayerController.Instance.playerIsDead) return;
+
         if (Vector3.Distance(PlayerController.Instance.transform.position, transform.position) <= agent.stoppingDistance)
         {
             attckToPlayerCd -= Time.deltaTime;
@@ -44,7 +44,8 @@ public class EnemyController : MonoBehaviour
     public void ReduceHp( float damage)
     {
         hp -= damage;
-
+        if (hp <= 0)
+            Die();
     }
     public void Init(Action<GameObject> killAction)
     {

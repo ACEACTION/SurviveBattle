@@ -26,6 +26,8 @@ public class PlayBtn : MonoBehaviour
 
     public void PlayButtonProcess()
     {
+        if (PlayerController.Instance.playerIsDead) return;
+
         GameManager.Instance.startGame = !GameManager.Instance.startGame;
 
         if (GameManager.Instance.startGame)
@@ -48,6 +50,7 @@ public class PlayBtn : MonoBehaviour
 
     public void OpenPlayBtn()
     {
+        
         Time.timeScale = 1;
         gameplayCanvas?.SetActive(false);
         gameObject.SetActive(true);
@@ -58,12 +61,12 @@ public class PlayBtn : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-            OpenPlayBtn();
-        if (Input.GetKeyDown(KeyCode.C))
-            ClosePlayBtn();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.O))
+    //        OpenPlayBtn();
+    //    if (Input.GetKeyDown(KeyCode.C))
+    //        ClosePlayBtn();
+    //}
 
 }

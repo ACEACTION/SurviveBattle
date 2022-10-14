@@ -37,6 +37,8 @@ public class Timer : MonoBehaviour
             {
                 levelTime = 0;
                 activeTimer = false;
+
+                WinLosePanel.Instance.WinProcess();
             }
         }
     }

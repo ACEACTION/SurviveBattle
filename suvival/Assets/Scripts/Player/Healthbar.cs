@@ -11,14 +11,14 @@ public class Healthbar : MonoBehaviour
 
     private void Start()
     {
-        currentHp = maxHp;
         SetSliderValue();
     }
 
-    public void SetMaxHp(float maxHp)
+    public void SetHp(float maxHp)
     {
         this.maxHp = maxHp;
-        hpSlider.value = maxHp;
+        hpSlider.maxValue = maxHp;
+        currentHp = maxHp;
     }
 
     public void MinusHp(float hp)
@@ -32,12 +32,6 @@ public class Healthbar : MonoBehaviour
         currentHp += hp;
         SetSliderValue();
     }
-
-    public bool PlayerIsDead()
-    {
-        return currentHp <= 0;
-    }
-
 
     void SetSliderValue()
     {

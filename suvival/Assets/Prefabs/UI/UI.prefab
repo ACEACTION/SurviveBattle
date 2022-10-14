@@ -832,7 +832,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 811fe0c611961924993e2916a3da93a3, type: 2}
   - {fileID: 11400000, guid: 893bb0f81194e134991d449e2dd0d64b, type: 2}
   - {fileID: 11400000, guid: 2201f9ec667a2534e89f9fddd2cd3738, type: 2}
+  abilitiesList: []
   abilityPanel: {fileID: 167171983616255148}
+  findedAbilitiesList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5938517008428012811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1308,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3799541558689600116, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontSize
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799541558689600116, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799541558689600116, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799541558689600116, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799541558689600116, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4525168036408158591, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.347
@@ -1402,6 +1427,34 @@ PrefabInstance:
     - target: {fileID: 5293039315353535713, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
       propertyPath: m_Value
       value: 0.347
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293039315353535713, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293039315353535713, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464832197727252220, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontSize
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464832197727252220, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464832197727252220, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464832197727252220, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464832197727252220, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7153392172132952336, guid: 0d549ca37fb09ba4fb10bbb7f6cf5b4c, type: 3}
       propertyPath: m_Name
@@ -1935,6 +1988,14 @@ PrefabInstance:
     - target: {fileID: 6838809494443982933, guid: d40021ea207157d40bd9cdff2028504c, type: 3}
       propertyPath: m_Name
       value: Win Lose Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592549970621883015, guid: d40021ea207157d40bd9cdff2028504c, type: 3}
+      propertyPath: m_Name
+      value: Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592549971417148250, guid: d40021ea207157d40bd9cdff2028504c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40021ea207157d40bd9cdff2028504c, type: 3}

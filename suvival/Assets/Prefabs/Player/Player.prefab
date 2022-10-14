@@ -640,7 +640,7 @@ MonoBehaviour:
   sidedArrows: 0
   anim: {fileID: 588544195}
   radius: 500
-  projectilePrefab: {fileID: 8595698007394254194, guid: d700138cc23d1534c91c86b21f5ebf5b, type: 3}
+  projectilePrefab: {fileID: 6264862058420268248, guid: 09a651a8e69f2464cbf3538d09e57afe, type: 3}
   _usedPool: 1
   _spawnAmount: 0
   bulletSpawnPoint: {fileID: 7724569978163744278}
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6264cb648669d84ebc3172b5a387475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 500
+  playerHp: 200
   spawnPoints:
   - {fileID: 701311102928681872}
   - {fileID: 4169155141283248467}
@@ -680,6 +680,7 @@ MonoBehaviour:
   - {fileID: 1598317973052450550}
   - {fileID: 4306707729113210884}
   - {fileID: 4565404463941909508}
+  playerIsDead: 0
   levelUpEffect: {fileID: 7724569977584506527}
   healthbar: {fileID: 4770112198976684337}
 --- !u!114 &1923259795
@@ -694,7 +695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e81d982af08364b99184edb8764805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomOffsetScale: 15
+  minRandomOffset: 5
+  maxRandomOffset: 20
   meteorPrefab: {fileID: 113030, guid: 15639ed131bd9e84eae0ad4206bee815, type: 3}
   stats: {fileID: 11400000, guid: fbfea435e207b214f8bc3abc99402f07, type: 2}
 --- !u!114 &1923259799
@@ -727,7 +729,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   _usedPool: 1
   activeAbility: 0
-  radius: 0
+  radius: 50
 --- !u!114 &1923259805
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class LightningController : MonoBehaviour
             if (destroyCd < 0)
             {
                 _destroyActivator = false;
-                destroyCd = 1f;
+                destroyCd = 2f;
                 _killAction(this.gameObject);
 
             }

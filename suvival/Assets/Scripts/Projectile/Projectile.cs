@@ -43,6 +43,8 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         transform.position += direction * stats.projecMoveSpeed * Time.deltaTime;
+//        transform.rotation = Quaternion.LookRotation(new Vector3(transform.rotation.x, 0, 0), Vector3.up) ;
+        //transform.eulerAngles = direction;
         if (destroyTimerCd <= 0)
         {
             destroyTimerCd = stats.projectileDestroyTime;

@@ -19,7 +19,7 @@ public class WinLosePanel : MonoBehaviour
 
     public void WinProcess()
     {
-        ActivePanel(true);
+        ActivePanel();
         loseIcon.SetActive(false);
         winIcon.SetActive(true);
         winLoseTxt.text = "Win";
@@ -27,14 +27,19 @@ public class WinLosePanel : MonoBehaviour
 
     public void LoseProcess()
     {
-        ActivePanel(true);
+        ActivePanel();
         loseIcon.SetActive(true);
         winIcon.SetActive(false);
         winLoseTxt.text = "Lose";
     }
-    public void ActivePanel(bool activation)
+
+
+    public void ActivePanel()
     {
-        panel.SetActive(activation);
+        DynamicJoystick.Instance.transform.parent.gameObject.SetActive(false);
+        PlayBtn.Instance.gameObject.SetActive(false);
+        panel.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }

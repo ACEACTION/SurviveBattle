@@ -16,8 +16,9 @@ public class GhostController : MonoBehaviour
 
     private void Update()
     {
-        agent.SetDestination(PlayerShooting.instance.transform.position);
+        if (PlayerController.Instance.playerIsDead) return;
 
+        agent.SetDestination(PlayerShooting.instance.transform.position);
     }
 
 }
