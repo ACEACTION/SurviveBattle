@@ -8,15 +8,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotateSpeed;
     public float moveSpeed;
     [SerializeField] Animator anim;
+    public Vector3 movementDir;
+    public float xDir, zDir;
 
-    Vector3 movementDir;
-    float xDir, zDir;
+    public static PlayerMovement Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
 
     void Update()
-    {
+    {     
         Move();
         RotatePlayerFace();
         SetAnimationMove();
+     
     }
 
     private void Move()
@@ -43,6 +51,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             anim.SetBool("Running", false);
+    }
+
+    public void ResetMovement()
+    {
+        movementDir = Vector3.zero;
+        xDir = 0;
+        zDir = 0;        
     }
 
     public bool PlayerIsMoving()

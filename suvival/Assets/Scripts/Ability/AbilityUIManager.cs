@@ -34,6 +34,7 @@ public class AbilityUIManager : MonoBehaviour
     public void CloseAbilityPanel()
     {
         DynamicJoystick.Instance.gameObject.SetActive(true);
+        PlayerMovement.Instance.ResetMovement();
         abilityPanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
